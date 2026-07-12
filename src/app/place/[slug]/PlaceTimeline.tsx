@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import type { PlaceResult } from "@/lib/validation";
 import { epochLabel, accuracyNote, getArchetype } from "@/lib/validation";
 import { sceneFor } from "@/lib/scene";
+import { PaleoMap } from "./PaleoMap";
 
 interface Props {
   place: PlaceResult;
@@ -49,14 +50,30 @@ export function PlaceTimeline({ place, model, license, generatedAt }: Props) {
 
   return (
     <div className="flex flex-col gap-8">
-      {/* Scene */}
-      <div
-        className={`relative flex aspect-[2/1] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br text-7xl ${scene.gradient}`}
-      >
-        <span aria-hidden>{scene.emoji}</span>
-        <span className="absolute bottom-4 left-5 rounded-full bg-black/40 px-4 py-1.5 text-sm font-medium text-white backdrop-blur">
-          {epochLabel(epoch.ma)}
+      {/* Live paleogeographic map — reconstructed coastlines (muller2022) with
+          the location drifting across the planet as you scrub. */}
+      <PaleoMap
+        epochMa={epoch.ma}
+        pinLat={epoch.paleoLat}
+        pinLon={epoch.paleoLon}
+        placeName={place.name}
+      />
+
+      {/* Environment + climate strip */}
+      <div className={`flex items-center gap-3 rounded-2xl bg-gradient-to-r px-5 py-4 text-white ${scene.gradient}`}>
+        <span className="text-3xl" aria-hidden>
+          {scene.emoji}
         </span>
+        <div className="flex flex-col">
+          <span className="text-lg font-semibold">
+            {formed && arch ? arch.label : epoch.status === "not-yet-formed" ? t("notFormedTitle") : "—"}
+          </span>
+          {formed && (
+            <span className="text-sm text-white/85">
+              {epoch.environment === "ocean" ? "Under water" : "Dry land"} · {bandLabel(epoch.band)} latitudes
+            </span>
+          )}
+        </div>
       </div>
 
       {/* Scrubber */}
