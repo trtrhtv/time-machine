@@ -1,0 +1,67 @@
+{
+  "version": 0,
+  "note": "Provisional v0 taxonomy for Phase 0 validation: latitude band × land/ocean, plus special statuses. Will grow toward ~30 archetypes in Phase 1 (adding e.g. shallow shelf vs open ocean, coastal vs continental interior, mountain-building zones, desert belts). Keep ALL taxonomy changes in this file only.",
+  "latitudeBands": {
+    "tropical": { "maxAbsLat": 23.5 },
+    "temperate": { "minAbsLat": 23.5, "maxAbsLat": 55 },
+    "polar": { "minAbsLat": 55 }
+  },
+  "archetypes": [
+    {
+      "id": "tropical-marine",
+      "label": "Tropical sea",
+      "environment": "marine",
+      "band": "tropical",
+      "description": "Warm ocean within the tropics. v0 cannot yet distinguish shallow shelf sea from open ocean — treat as 'tropical shallow-marine' provisionally when near a continent.",
+      "sceneAsset": null
+    },
+    {
+      "id": "temperate-marine",
+      "label": "Temperate sea",
+      "environment": "marine",
+      "band": "temperate",
+      "description": "Mid-latitude ocean.",
+      "sceneAsset": null
+    },
+    {
+      "id": "polar-marine",
+      "label": "Polar sea",
+      "environment": "marine",
+      "band": "polar",
+      "description": "High-latitude, cold ocean; sea ice plausible depending on epoch climate.",
+      "sceneAsset": null
+    },
+    {
+      "id": "tropical-land",
+      "label": "Tropical land",
+      "environment": "land",
+      "band": "tropical",
+      "description": "Land within the tropics. v0 cannot distinguish rainforest, desert belt, or coastal plain.",
+      "sceneAsset": null
+    },
+    {
+      "id": "temperate-land",
+      "label": "Temperate continental",
+      "environment": "land",
+      "band": "temperate",
+      "description": "Mid-latitude land ('temperate continental interior' provisionally when far from coast).",
+      "sceneAsset": null
+    },
+    {
+      "id": "polar-land",
+      "label": "Polar land",
+      "environment": "land",
+      "band": "polar",
+      "description": "High-latitude land.",
+      "sceneAsset": null
+    },
+    {
+      "id": "not-yet-formed",
+      "label": "Not yet formed",
+      "environment": null,
+      "band": null,
+      "description": "The crust under this spot did not exist at this time (young oceanic/volcanic crust, e.g. Iceland before ~20 Ma). Product moment: 'the ground under your feet had not been born yet.'",
+      "sceneAsset": null
+    }
+  ]
+}

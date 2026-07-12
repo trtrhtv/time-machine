@@ -1,0 +1,20 @@
+{
+  "epochsMa": [20, 66, 90, 150, 250, 400, 540],
+  "places": [
+    { "name": "New York", "lat": 40.7128, "lon": -74.006 },
+    { "name": "London", "lat": 51.5074, "lon": -0.1278 },
+    { "name": "Tel Aviv", "lat": 32.0853, "lon": 34.7818 },
+    { "name": "Denver", "lat": 39.7392, "lon": -104.9903 },
+    { "name": "Dubai", "lat": 25.2048, "lon": 55.2708 },
+    { "name": "Everest Base", "lat": 28.0026, "lon": 86.8528 },
+    { "name": "Sydney", "lat": -33.8688, "lon": 151.2093 },
+    {
+      "name": "Reykjavik",
+      "lat": 64.1466,
+      "lon": -21.9426,
+      "expectation": "Did not exist before ~20 Ma (young volcanic crust) — expect 'not-yet-formed' for older epochs."
+    },
+    { "name": "Mumbai", "lat": 19.076, "lon": 72.8777 },
+    { "name": "Cairo", "lat": 30.0444, "lon": 31.2357 }
+  ]
+}
