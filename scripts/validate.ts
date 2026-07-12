@@ -110,13 +110,17 @@ function fail(msg: string, body: unknown): never {
 async function probe(): Promise<string> {
   console.log("Probing GPlates Web Service…");
 
-  const models = await gwsGet("/info/model_names", {});
+  const models = await gwsGet("/model/list", {});
   if (models.status !== 200 || !Array.isArray(models.body)) {
-    fail(`GET /info/model_names returned status ${models.status} or non-array`, models.body);
+    fail(`GET /model/list returned status ${models.status} or non-array`, models.body);
   }
   const names = (models.body as unknown[]).map(String);
   console.log(`  models available: ${names.join(", ")}`);
-  const model = PREFERRED_MODELS.find((m) => names.includes(m));
+  // Model names come back lower-cased from the service; match case-insensitively
+  // and use the service's own spelling downstream.
+  const model = names.find((n) =>
+    PREFERRED_MODELS.some((m) => m.toLowerCase() === n.toLowerCase()),
+  );
   if (!model) fail(`Neither ${PREFERRED_MODELS.join(" nor ")} in model list`, names);
   console.log(`  using model: ${model}`);
 

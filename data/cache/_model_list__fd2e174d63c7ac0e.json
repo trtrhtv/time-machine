@@ -1,0 +1,22 @@
+{
+  "url": "https://gws.gplates.org/model/list?",
+  "fetchedAt": "2026-07-12T21:26:28.913Z",
+  "status": 200,
+  "body": [
+    "alfonso2024",
+    "cao2024",
+    "muller2022",
+    "zahirovic2022",
+    "merdith2021",
+    "clennett2020",
+    "muller2019",
+    "torsvikcocks2017",
+    "matthews2016_mantle_ref",
+    "matthews2016_pmag_ref",
+    "muller2016",
+    "seton2012",
+    "golonka",
+    "paleomap",
+    "rodinia"
+  ]
+}
