@@ -1,0 +1,810 @@
+{
+  "model": "muller2022",
+  "modelLicense": "open (GPlates Web Service bundled reconstruction model)",
+  "generatedAt": "2026-07-12T21:36:02.837Z",
+  "epochsMa": [
+    20,
+    66,
+    90,
+    150,
+    250,
+    400,
+    540
+  ],
+  "caveats": [
+    "Land/ocean is point-in-polygon against reconstructed *modern* coastline outlines. Shallow epicontinental seas (e.g. the Western Interior Seaway over Denver ~90 Ma, the Tethys shelf over Tel Aviv/Cairo) are NOT captured — such spots will wrongly read 'land'. Fixing this without Scotese paleogeography is a named Phase 1 problem (candidate: paleo-elevation-free heuristics or open paleogeography alternatives).",
+    "Positions carry ±100 km (and more at older epochs) uncertainty by design — always shown in the product's accuracy box.",
+    "Marine results cannot yet distinguish shallow shelf from open ocean (taxonomy v0)."
+  ],
+  "places": [
+    {
+      "name": "New York",
+      "lat": 40.7128,
+      "lon": -74.006,
+      "epochs": [
+        {
+          "ma": 20,
+          "status": "ok",
+          "paleoLat": 40.38,
+          "paleoLon": -71.68,
+          "environment": "ocean",
+          "band": "temperate",
+          "archetypeId": "temperate-marine",
+          "notes": []
+        },
+        {
+          "ma": 66,
+          "status": "ok",
+          "paleoLat": 40.89,
+          "paleoLon": -56.06,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 90,
+          "status": "ok",
+          "paleoLat": 36.91,
+          "paleoLon": -45.02,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 150,
+          "status": "ok",
+          "paleoLat": 21.57,
+          "paleoLon": -26.51,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 250,
+          "status": "ok",
+          "paleoLat": 5.69,
+          "paleoLon": -16.76,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 400,
+          "status": "ok",
+          "paleoLat": -8.4,
+          "paleoLon": -31.52,
+          "environment": "ocean",
+          "band": "tropical",
+          "archetypeId": "tropical-marine",
+          "notes": []
+        },
+        {
+          "ma": 540,
+          "status": "ok",
+          "paleoLat": -44.56,
+          "paleoLon": -53.45,
+          "environment": "ocean",
+          "band": "temperate",
+          "archetypeId": "temperate-marine",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "name": "London",
+      "lat": 51.5074,
+      "lon": -0.1278,
+      "epochs": [
+        {
+          "ma": 20,
+          "status": "ok",
+          "paleoLat": 51.14,
+          "paleoLon": -5.18,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 66,
+          "status": "ok",
+          "paleoLat": 48.35,
+          "paleoLon": -5.84,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 90,
+          "status": "ok",
+          "paleoLat": 42.09,
+          "paleoLon": -2.55,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 150,
+          "status": "ok",
+          "paleoLat": 28.83,
+          "paleoLon": 7.57,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 250,
+          "status": "ok",
+          "paleoLat": 19.35,
+          "paleoLon": 11.4,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 400,
+          "status": "ok",
+          "paleoLat": 14.57,
+          "paleoLon": -11.4,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 540,
+          "status": "ok",
+          "paleoLat": 15.09,
+          "paleoLon": 12.88,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "name": "Tel Aviv",
+      "lat": 32.0853,
+      "lon": 34.7818,
+      "epochs": [
+        {
+          "ma": 20,
+          "status": "ok",
+          "paleoLat": 28.43,
+          "paleoLon": 29.73,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 66,
+          "status": "ok",
+          "paleoLat": 20.87,
+          "paleoLon": 26.15,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 90,
+          "status": "ok",
+          "paleoLat": 11.03,
+          "paleoLon": 23.9,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 150,
+          "status": "ok",
+          "paleoLat": -5.51,
+          "paleoLon": 22.79,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 250,
+          "status": "ok",
+          "paleoLat": -12.46,
+          "paleoLon": 28.46,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 400,
+          "status": "ok",
+          "paleoLat": -10.63,
+          "paleoLon": 44.96,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 540,
+          "status": "ok",
+          "paleoLat": -2.07,
+          "paleoLon": 57.18,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "name": "Denver",
+      "lat": 39.7392,
+      "lon": -104.9903,
+      "epochs": [
+        {
+          "ma": 20,
+          "status": "ok",
+          "paleoLat": 40.3,
+          "paleoLon": -102.75,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 66,
+          "status": "ok",
+          "paleoLat": 44.08,
+          "paleoLon": -87.91,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 90,
+          "status": "ok",
+          "paleoLat": 42.82,
+          "paleoLon": -74.91,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 150,
+          "status": "ok",
+          "paleoLat": 29.74,
+          "paleoLon": -51.09,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 250,
+          "status": "ok",
+          "paleoLat": 11.84,
+          "paleoLon": -39.78,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 400,
+          "status": "ok",
+          "paleoLat": -8.99,
+          "paleoLon": -55.35,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 540,
+          "status": "ok",
+          "paleoLat": -46.4,
+          "paleoLon": -87.2,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": [
+            "SANITY: 46° great-circle jump from 400 Ma — cross-check vs ancient-earth."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dubai",
+      "lat": 25.2048,
+      "lon": 55.2708,
+      "epochs": [
+        {
+          "ma": 20,
+          "status": "ok",
+          "paleoLat": 20.14,
+          "paleoLon": 48.72,
+          "environment": "ocean",
+          "band": "tropical",
+          "archetypeId": "tropical-marine",
+          "notes": []
+        },
+        {
+          "ma": 66,
+          "status": "ok",
+          "paleoLat": 11.94,
+          "paleoLon": 43.84,
+          "environment": "ocean",
+          "band": "tropical",
+          "archetypeId": "tropical-marine",
+          "notes": []
+        },
+        {
+          "ma": 90,
+          "status": "ok",
+          "paleoLat": 1.39,
+          "paleoLon": 40.57,
+          "environment": "ocean",
+          "band": "tropical",
+          "archetypeId": "tropical-marine",
+          "notes": []
+        },
+        {
+          "ma": 150,
+          "status": "ok",
+          "paleoLat": -18.05,
+          "paleoLon": 37.62,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 250,
+          "status": "ok",
+          "paleoLat": -23.66,
+          "paleoLon": 44.85,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 400,
+          "status": "ok",
+          "paleoLat": -18.22,
+          "paleoLon": 63.15,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 540,
+          "status": "ok",
+          "paleoLat": -10.56,
+          "paleoLon": 74.48,
+          "environment": "ocean",
+          "band": "tropical",
+          "archetypeId": "tropical-marine",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "name": "Everest Base",
+      "lat": 28.0026,
+      "lon": 86.8528,
+      "epochs": [
+        {
+          "ma": 20,
+          "status": "ok",
+          "paleoLat": 21.01,
+          "paleoLon": 79.65,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 66,
+          "status": "ok",
+          "paleoLat": -14.05,
+          "paleoLon": 65.15,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 90,
+          "status": "ok",
+          "paleoLat": -33.32,
+          "paleoLon": 57.51,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 150,
+          "status": "ok",
+          "paleoLat": -48.64,
+          "paleoLon": 51.33,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 250,
+          "status": "ok",
+          "paleoLat": -48.37,
+          "paleoLon": 60.13,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 400,
+          "status": "ok",
+          "paleoLat": -39.75,
+          "paleoLon": 82.98,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 540,
+          "status": "ok",
+          "paleoLat": -33.75,
+          "paleoLon": 90.64,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "name": "Sydney",
+      "lat": -33.8688,
+      "lon": 151.2093,
+      "epochs": [
+        {
+          "ma": 20,
+          "status": "ok",
+          "paleoLat": -44.58,
+          "paleoLon": 147.87,
+          "environment": "ocean",
+          "band": "temperate",
+          "archetypeId": "temperate-marine",
+          "notes": []
+        },
+        {
+          "ma": 66,
+          "status": "ok",
+          "paleoLat": -58.47,
+          "paleoLon": 149.88,
+          "environment": "land",
+          "band": "polar",
+          "archetypeId": "polar-land",
+          "notes": []
+        },
+        {
+          "ma": 90,
+          "status": "ok",
+          "paleoLat": -59.21,
+          "paleoLon": 152.91,
+          "environment": "land",
+          "band": "polar",
+          "archetypeId": "polar-land",
+          "notes": []
+        },
+        {
+          "ma": 150,
+          "status": "ok",
+          "paleoLat": -69.73,
+          "paleoLon": 133.55,
+          "environment": "ocean",
+          "band": "polar",
+          "archetypeId": "polar-marine",
+          "notes": []
+        },
+        {
+          "ma": 250,
+          "status": "ok",
+          "paleoLat": -66.4,
+          "paleoLon": 138.16,
+          "environment": "land",
+          "band": "polar",
+          "archetypeId": "polar-land",
+          "notes": []
+        },
+        {
+          "ma": 400,
+          "status": "ok",
+          "paleoLat": -54.78,
+          "paleoLon": 143.57,
+          "environment": "ocean",
+          "band": "temperate",
+          "archetypeId": "temperate-marine",
+          "notes": []
+        },
+        {
+          "ma": 540,
+          "status": "not-yet-formed",
+          "paleoLat": null,
+          "paleoLon": null,
+          "environment": null,
+          "band": null,
+          "archetypeId": null,
+          "notes": [
+            "No reconstructed position — crust likely did not exist yet at this time."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reykjavik",
+      "lat": 64.1466,
+      "lon": -21.9426,
+      "expectation": "Did not exist before ~20 Ma (young volcanic crust) — expect 'not-yet-formed' for older epochs.",
+      "epochs": [
+        {
+          "ma": 20,
+          "status": "not-yet-formed",
+          "paleoLat": null,
+          "paleoLon": null,
+          "environment": null,
+          "band": null,
+          "archetypeId": null,
+          "notes": [
+            "No reconstructed position — crust likely did not exist yet at this time."
+          ]
+        },
+        {
+          "ma": 66,
+          "status": "not-yet-formed",
+          "paleoLat": null,
+          "paleoLon": null,
+          "environment": null,
+          "band": null,
+          "archetypeId": null,
+          "notes": [
+            "No reconstructed position — crust likely did not exist yet at this time."
+          ]
+        },
+        {
+          "ma": 90,
+          "status": "not-yet-formed",
+          "paleoLat": null,
+          "paleoLon": null,
+          "environment": null,
+          "band": null,
+          "archetypeId": null,
+          "notes": [
+            "No reconstructed position — crust likely did not exist yet at this time."
+          ]
+        },
+        {
+          "ma": 150,
+          "status": "not-yet-formed",
+          "paleoLat": null,
+          "paleoLon": null,
+          "environment": null,
+          "band": null,
+          "archetypeId": null,
+          "notes": [
+            "No reconstructed position — crust likely did not exist yet at this time."
+          ]
+        },
+        {
+          "ma": 250,
+          "status": "not-yet-formed",
+          "paleoLat": null,
+          "paleoLon": null,
+          "environment": null,
+          "band": null,
+          "archetypeId": null,
+          "notes": [
+            "No reconstructed position — crust likely did not exist yet at this time."
+          ]
+        },
+        {
+          "ma": 400,
+          "status": "not-yet-formed",
+          "paleoLat": null,
+          "paleoLon": null,
+          "environment": null,
+          "band": null,
+          "archetypeId": null,
+          "notes": [
+            "No reconstructed position — crust likely did not exist yet at this time."
+          ]
+        },
+        {
+          "ma": 540,
+          "status": "not-yet-formed",
+          "paleoLat": null,
+          "paleoLon": null,
+          "environment": null,
+          "band": null,
+          "archetypeId": null,
+          "notes": [
+            "No reconstructed position — crust likely did not exist yet at this time."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mumbai",
+      "lat": 19.076,
+      "lon": 72.8777,
+      "epochs": [
+        {
+          "ma": 20,
+          "status": "ok",
+          "paleoLat": 12.77,
+          "paleoLon": 65.8,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 66,
+          "status": "ok",
+          "paleoLat": -18.45,
+          "paleoLon": 49.56,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 90,
+          "status": "ok",
+          "paleoLat": -34.31,
+          "paleoLon": 38.76,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 150,
+          "status": "ok",
+          "paleoLat": -43.46,
+          "paleoLon": 30.05,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 250,
+          "status": "ok",
+          "paleoLat": -44.36,
+          "paleoLon": 38.2,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 400,
+          "status": "ok",
+          "paleoLat": -39.62,
+          "paleoLon": 62.67,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 540,
+          "status": "ok",
+          "paleoLat": -31.86,
+          "paleoLon": 72.2,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "name": "Cairo",
+      "lat": 30.0444,
+      "lon": 31.2357,
+      "epochs": [
+        {
+          "ma": 20,
+          "status": "ok",
+          "paleoLat": 28.42,
+          "paleoLon": 26.92,
+          "environment": "land",
+          "band": "temperate",
+          "archetypeId": "temperate-land",
+          "notes": []
+        },
+        {
+          "ma": 66,
+          "status": "ok",
+          "paleoLat": 21.03,
+          "paleoLon": 23.5,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 90,
+          "status": "ok",
+          "paleoLat": 11.37,
+          "paleoLon": 21.4,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 150,
+          "status": "ok",
+          "paleoLat": -4.42,
+          "paleoLon": 19.79,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 250,
+          "status": "ok",
+          "paleoLat": -11.58,
+          "paleoLon": 25.33,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 400,
+          "status": "ok",
+          "paleoLat": -10.45,
+          "paleoLon": 41.73,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        },
+        {
+          "ma": 540,
+          "status": "ok",
+          "paleoLat": -1.81,
+          "paleoLon": 54.01,
+          "environment": "land",
+          "band": "tropical",
+          "archetypeId": "tropical-land",
+          "notes": []
+        }
+      ]
+    }
+  ]
+}

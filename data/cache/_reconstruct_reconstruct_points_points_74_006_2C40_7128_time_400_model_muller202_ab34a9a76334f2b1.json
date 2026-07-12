@@ -1,0 +1,14 @@
+{
+  "url": "https://gws.gplates.org/reconstruct/reconstruct_points/?points=-74.006%2C40.7128&time=400&model=muller2022",
+  "fetchedAt": "2026-07-12T21:32:54.858Z",
+  "status": 200,
+  "body": {
+    "type": "MultiPoint",
+    "coordinates": [
+      [
+        -31.5239,
+        -8.3952
+      ]
+    ]
+  }
+}
