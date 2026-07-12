@@ -1,0 +1,3775 @@
+{
+  "url": "https://gws.gplates.org/topology/plate_boundaries/?time=400&model=muller2022",
+  "fetchedAt": "2026-07-12T23:01:41.774Z",
+  "status": 200,
+  "body": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              177.0492,
+              -75.4485
+            ],
+            [
+              174.3097,
+              -71.6348
+            ],
+            [
+              171.1233,
+              -67.6331
+            ],
+            [
+              168.7481,
+              -64.5082
+            ],
+            [
+              166.7529,
+              -62.429
+            ],
+            [
+              164.6008,
+              -57.4907
+            ],
+            [
+              162.883,
+              -54.3223
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.3829,
+          "pid": 801,
+          "name": "New Zealand SZ (SE eastern Gondwanaland)",
+          "polarity": "Left"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              143.83,
+              76.3023
+            ],
+            [
+              140.6144,
+              75.2371
+            ],
+            [
+              136.4648,
+              67.8454
+            ],
+            [
+              134.6084,
+              64.9187
+            ],
+            [
+              131.4141,
+              53.9666
+            ],
+            [
+              129.2876,
+              49.1373
+            ],
+            [
+              129.2517,
+              49.0414
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.4891,
+          "pid": 430,
+          "name": "Nuhetdavaa-Enshoo (Uliastai) subduction zone",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -70.4574,
+              -14.0679
+            ],
+            [
+              -72.6834,
+              -10.9256
+            ],
+            [
+              -72.7886,
+              -5.3432
+            ],
+            [
+              -71.7779,
+              -0.6173
+            ],
+            [
+              -69.6325,
+              5.6428
+            ],
+            [
+              -70.3976,
+              19.6773
+            ],
+            [
+              -69.7038,
+              27.0184
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.7378,
+          "pid": 101,
+          "name": "WNAM Transform"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -69.7038,
+              27.0184
+            ],
+            [
+              -69.5562,
+              28.4722
+            ],
+            [
+              -68.8855,
+              32.3754
+            ],
+            [
+              -68.5233,
+              32.8459
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.1041,
+          "pid": 101,
+          "name": "WNAM Transform"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -48.5028,
+              -30.7945
+            ],
+            [
+              -53.5138,
+              -28.8024
+            ],
+            [
+              -55.7055,
+              -27.2635
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.1266,
+          "pid": 101,
+          "name": "southern WNAM SZ",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -55.7055,
+              -27.2635
+            ],
+            [
+              -57.3925,
+              -26.0253
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.0341,
+          "pid": 101,
+          "name": "southern WNAM SZ",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -57.3925,
+              -26.0253
+            ],
+            [
+              -58.7866,
+              -24.9668
+            ],
+            [
+              -64.013,
+              -21.7019
+            ],
+            [
+              -70.0372,
+              -15.5071
+            ],
+            [
+              -70.4574,
+              -14.0679
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.3031,
+          "pid": 101,
+          "name": "southern WNAM SZ",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              9.9273,
+              32.2725
+            ],
+            [
+              9.9931,
+              32.8541
+            ],
+            [
+              10.773,
+              36.8583
+            ],
+            [
+              11.929,
+              41.1891
+            ],
+            [
+              13.4687,
+              44.5152
+            ],
+            [
+              15.1304,
+              47.4597
+            ],
+            [
+              17.8902,
+              50.1192
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.3309,
+          "pid": 302,
+          "name": "Scythian-Turan subduction zone",
+          "polarity": "Left"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              17.8902,
+              50.1192
+            ],
+            [
+              18.3541,
+              50.5331
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.0089,
+          "pid": 302,
+          "name": "Scythian-Turan subduction zone",
+          "polarity": "Left"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              43.6056,
+              39.027
+            ],
+            [
+              41.0628,
+              39.8246
+            ],
+            [
+              39.8518,
+              40.3475
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.0556,
+          "pid": 902003,
+          "name": "Magnitogorsk subduction zone",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              39.8518,
+              40.3475
+            ],
+            [
+              35.9737,
+              41.8868
+            ],
+            [
+              34.0022,
+              42.5058
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.0853,
+          "pid": 902003,
+          "name": "Magnitogorsk subduction zone",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              34.0022,
+              42.5058
+            ],
+            [
+              29.4714,
+              43.7594
+            ],
+            [
+              22.9202,
+              46.9468
+            ],
+            [
+              18.3541,
+              50.5331
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.2411,
+          "pid": 902003,
+          "name": "Magnitogorsk subduction zone",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              18.3541,
+              50.5331
+            ],
+            [
+              18.1442,
+              50.6819
+            ],
+            [
+              8.058,
+              55.5239
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.1386,
+          "pid": 902003,
+          "name": "Magnitogorsk subduction zone",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              8.058,
+              55.5239
+            ],
+            [
+              7.8232,
+              55.6149
+            ],
+            [
+              -0.4759,
+              60.7635
+            ],
+            [
+              -1.6164,
+              61.5811
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.1377,
+          "pid": 902003,
+          "name": "Magnitogorsk subduction zone",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              84.057,
+              28.234
+            ],
+            [
+              84.0826,
+              26.5274
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.0298,
+          "pid": 1001,
+          "name": "Turgai arc subduction zone",
+          "polarity": "Left"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              84.0826,
+              26.5274
+            ],
+            [
+              84.125,
+              23.5748
+            ],
+            [
+              86.3475,
+              19.6514
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.1289,
+          "pid": 1001,
+          "name": "Turgai arc subduction zone",
+          "polarity": "Left"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -57.3925,
+              -26.0253
+            ],
+            [
+              -54.8791,
+              -25.5803
+            ],
+            [
+              -47.4009,
+              -22.5126
+            ],
+            [
+              -42.732,
+              -19.5184
+            ],
+            [
+              -38.9743,
+              -17.067
+            ],
+            [
+              -35.0914,
+              -15.1833
+            ],
+            [
+              -32.1749,
+              -14.5348
+            ],
+            [
+              -28.5527,
+              -14.0552
+            ],
+            [
+              -25.8452,
+              -12.5556
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.5769,
+          "pid": 701,
+          "name": ""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -46.5669,
+              47.7808
+            ],
+            [
+              -46.9816,
+              47.1796
+            ],
+            [
+              -47.1533,
+              46.8704
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.0173,
+          "pid": 302,
+          "name": ""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -47.1533,
+              46.8704
+            ],
+            [
+              -51.0268,
+              38.774
+            ],
+            [
+              -54.0412,
+              30.0144
+            ],
+            [
+              -56.0251,
+              22.0413
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.4512,
+          "pid": 302,
+          "name": ""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -69.7038,
+              27.0184
+            ],
+            [
+              -68.9709,
+              26.6221
+            ],
+            [
+              -64.0035,
+              24.0105
+            ],
+            [
+              -57.6179,
+              21.9579
+            ],
+            [
+              -56.0251,
+              22.0413
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.2385,
+          "pid": 103,
+          "name": "Arctic Alaska subduction zone",
+          "polarity": "Left"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              83.5302,
+              31.2919
+            ],
+            [
+              84.2294,
+              31.6158
+            ],
+            [
+              88.8235,
+              33.6587
+            ],
+            [
+              90.0276,
+              34.0207
+            ],
+            [
+              91.7133,
+              35.0593
+            ],
+            [
+              94.4911,
+              36.7436
+            ],
+            [
+              95.0913,
+              36.9862
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.1955,
+          "pid": 401,
+          "name": ""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              43.6056,
+              39.027
+            ],
+            [
+              46.8555,
+              35.5488
+            ],
+            [
+              50.989,
+              31.1531
+            ],
+            [
+              56.5717,
+              27.8858
+            ],
+            [
+              62.3077,
+              25.9893
+            ],
+            [
+              68.3542,
+              23.9878
+            ],
+            [
+              74.7848,
+              23.3286
+            ],
+            [
+              80.5437,
+              25.209
+            ],
+            [
+              84.0826,
+              26.5274
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.7332,
+          "pid": 401,
+          "name": "Tagil arc / Altai Sayan subduction zone",
+          "polarity": "Left"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              83.5302,
+              31.2919
+            ],
+            [
+              83.5374,
+              31.2002
+            ],
+            [
+              84.057,
+              28.234
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.054,
+          "pid": 1001,
+          "name": ""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              95.2666,
+              37.4666
+            ],
+            [
+              97.3371,
+              36.659
+            ],
+            [
+              103.636,
+              33.783
+            ],
+            [
+              110.4566,
+              28.1612
+            ],
+            [
+              110.4858,
+              28.1388
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.2771,
+          "pid": 459,
+          "name": "Trasnform bounding Paleo-Tianshan Ocean north"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              149.6057,
+              48.66
+            ],
+            [
+              149.6621,
+              48.7808
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.0022,
+          "pid": 430,
+          "name": ""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              149.6621,
+              48.7808
+            ],
+            [
+              151.3787,
+              52.1875
+            ],
+            [
+              152.6129,
+              60.9577
+            ],
+            [
+              152.0969,
+              70.5153
+            ],
+            [
+              147.5377,
+              74.9356
+            ],
+            [
+              143.83,
+              76.3023
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.4922,
+          "pid": 430,
+          "name": ""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              143.83,
+              76.3023
+            ],
+            [
+              136.2629,
+              78.3237
+            ],
+            [
+              54.9328,
+              75.0811
+            ],
+            [
+              51.8665,
+              73.201
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.3855,
+          "pid": 430,
+          "name": ""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              51.8665,
+              73.201
+            ],
+            [
+              48.1609,
+              70.1298
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.0573,
+          "pid": 430,
+          "name": ""
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              51.8665,
+              73.201
+            ],
+            [
+              46.2065,
+              73.5538
+            ],
+            [
+              33.9082,
+              73.3969
+            ],
+            [
+              19.3861,
+              71.8343
+            ],
+            [
+              6.1902,
+              68.201
+            ],
+            [
+              2.5297,
+              65.2538
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.3281,
+          "pid": 902003,
+          "name": "Magnitogorsk-Alexander transform"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              2.5297,
+              65.2538
+            ],
+            [
+              2.4437,
+              65.1745
+            ],
+            [
+              -1.6164,
+              61.5811
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.0718,
+          "pid": 902003,
+          "name": "Magnitogorsk-Alexander transform"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              4.1153,
+              24.8716
+            ],
+            [
+              3.7976,
+              22.944
+            ],
+            [
+              2.34,
+              19.5504
+            ],
+            [
+              1.2585,
+              16.2744
+            ],
+            [
+              -0.4497,
+              12.6848
+            ],
+            [
+              -3.2333,
+              9.0197
+            ],
+            [
+              -4.6163,
+              7.1165
+            ],
+            [
+              -6.4471,
+              3.0705
+            ],
+            [
+              -7.8614,
+              1.5955
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.4606,
+          "pid": 314,
+          "name": "Mid German Crystalline Rise SZ",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -13.6085,
+              4.7594
+            ],
+            [
+              -12.4322,
+              4.0699
+            ],
+            [
+              -9.5283,
+              2.4553
+            ],
+            [
+              -8.5781,
+              1.9655
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.1003,
+          "pid": 314,
+          "name": "Lizard/Giessen backarc transform west"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -8.5781,
+              1.9655
+            ],
+            [
+              -7.8614,
+              1.5955
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.0141,
+          "pid": 314,
+          "name": "Lizard/Giessen backarc transform west"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              6.3055,
+              24.0753
+            ],
+            [
+              9.9273,
+              32.2725
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.1535,
+          "pid": 302,
+          "name": "South Baltica (Rheic) subduction zone",
+          "polarity": "Left"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -8.5781,
+              1.9655
+            ],
+            [
+              -7.2671,
+              5.5163
+            ],
+            [
+              -8.0412,
+              6.0824
+            ],
+            [
+              -6.9303,
+              8.3901
+            ],
+            [
+              -6.1729,
+              8.0332
+            ],
+            [
+              -4.7676,
+              10.7373
+            ],
+            [
+              -3.8203,
+              10.523
+            ],
+            [
+              -2.5176,
+              13.1965
+            ],
+            [
+              -1.7531,
+              13.0706
+            ],
+            [
+              0.8251,
+              19.0837
+            ],
+            [
+              0.2715,
+              19.3083
+            ],
+            [
+              2.9607,
+              25.2502
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.5123,
+          "pid": 0,
+          "name": "Lizard/Giessen backarc MOR"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              2.9607,
+              25.2502
+            ],
+            [
+              4.1153,
+              24.8716
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.0194,
+          "pid": 314,
+          "name": "Lizard/Giessen backarc transform east"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              4.1153,
+              24.8716
+            ],
+            [
+              5.763,
+              24.3117
+            ],
+            [
+              6.3055,
+              24.0753
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.0375,
+          "pid": 314,
+          "name": "Lizard/Giessen backarc transform east"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              145.2724,
+              -26.5001
+            ],
+            [
+              152.0204,
+              -28.8008
+            ],
+            [
+              157.6073,
+              -33.3984
+            ],
+            [
+              162.0923,
+              -38.6702
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.3392,
+          "pid": 902014,
+          "name": "Gamilaroi-Calliope intraoceanic SZ",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              162.0923,
+              -38.6702
+            ],
+            [
+              162.8857,
+              -39.514
+            ],
+            [
+              164.8328,
+              -44.7082
+            ],
+            [
+              163.7065,
+              -52.1188
+            ],
+            [
+              162.883,
+              -54.3223
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.2817,
+          "pid": 902014,
+          "name": "Gamilaroi-Calliope intraoceanic SZ",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -47.1533,
+              46.8704
+            ],
+            [
+              -46.0074,
+              47.3504
+            ],
+            [
+              -37.6926,
+              48.1986
+            ],
+            [
+              -33.4091,
+              48.5938
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.1647,
+          "pid": 0,
+          "name": "east of Alexander-Baltica MOR"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -33.4091,
+              48.5938
+            ],
+            [
+              -33.4378,
+              47.7841
+            ],
+            [
+              -28.922,
+              47.5311
+            ],
+            [
+              -21.4196,
+              48.639
+            ],
+            [
+              -15.209,
+              48.0845
+            ],
+            [
+              -12.6662,
+              48.5918
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.2604,
+          "pid": 0,
+          "name": "Alexander-Baltica early spreading"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -12.6662,
+              48.5918
+            ],
+            [
+              -12.9645,
+              49.3183
+            ],
+            [
+              -3.5907,
+              50.1891
+            ],
+            [
+              -0.6303,
+              50.0842
+            ],
+            [
+              17.8902,
+              50.1192
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.3598,
+          "pid": 0,
+          "name": "Alexander Terrane-Baltica MOR"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -25.8452,
+              -12.5556
+            ],
+            [
+              -25.7574,
+              -12.3511
+            ],
+            [
+              -23.0775,
+              -7.3791
+            ],
+            [
+              -20.2933,
+              -2.9643
+            ],
+            [
+              -13.9874,
+              3.0169
+            ],
+            [
+              -13.6085,
+              4.7594
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.3759,
+          "pid": 101,
+          "name": "East Laurentia (Rheic) SZ",
+          "polarity": "Left"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              2.5297,
+              65.2538
+            ],
+            [
+              11.471,
+              61.1587
+            ],
+            [
+              12.4168,
+              61.5146
+            ],
+            [
+              18.8966,
+              57.005
+            ],
+            [
+              19.8699,
+              57.2476
+            ],
+            [
+              24.3061,
+              52.3684
+            ],
+            [
+              25.1997,
+              52.5706
+            ],
+            [
+              29.3946,
+              47.0788
+            ],
+            [
+              30.4218,
+              47.4615
+            ],
+            [
+              34.0022,
+              42.5058
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.5419,
+          "pid": 0,
+          "name": "Magnitogorsk MOR"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              129.954,
+              -14.2491
+            ],
+            [
+              134.3829,
+              -16.6385
+            ],
+            [
+              138.8274,
+              -20.0532
+            ],
+            [
+              142.5981,
+              -23.4886
+            ],
+            [
+              145.2724,
+              -26.5001
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.3332,
+          "pid": 801,
+          "name": "SZ along eastern Gondwanaland",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -149.0435,
+              -22.5252
+            ],
+            [
+              -151.0029,
+              -19.6067
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.0601,
+          "pid": 0,
+          "name": "Izanagi-Farallon MOR"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [
+                -151.0029,
+                -19.6067
+              ],
+              [
+                -151.545,
+                -18.7755
+              ],
+              [
+                -152.0818,
+                -17.9428
+              ],
+              [
+                -152.6135,
+                -17.1086
+              ],
+              [
+                -153.1404,
+                -16.2731
+              ],
+              [
+                -153.6629,
+                -15.4363
+              ],
+              [
+                -154.1812,
+                -14.5982
+              ],
+              [
+                -154.6956,
+                -13.759
+              ],
+              [
+                -155.2062,
+                -12.9188
+              ],
+              [
+                -155.7135,
+                -12.0776
+              ],
+              [
+                -156.2176,
+                -11.2354
+              ],
+              [
+                -156.7187,
+                -10.3924
+              ],
+              [
+                -157.2171,
+                -9.5487
+              ],
+              [
+                -157.7131,
+                -8.7042
+              ],
+              [
+                -158.2068,
+                -7.8591
+              ],
+              [
+                -158.6986,
+                -7.0135
+              ],
+              [
+                -159.1885,
+                -6.1673
+              ],
+              [
+                -159.6769,
+                -5.3206
+              ],
+              [
+                -160.1639,
+                -4.4736
+              ],
+              [
+                -160.6498,
+                -3.6263
+              ],
+              [
+                -161.1348,
+                -2.7787
+              ],
+              [
+                -161.6192,
+                -1.9309
+              ],
+              [
+                -162.103,
+                -1.083
+              ],
+              [
+                -162.5865,
+                -0.235
+              ],
+              [
+                -163.07,
+                0.6131
+              ],
+              [
+                -163.5537,
+                1.461
+              ],
+              [
+                -164.0377,
+                2.3089
+              ],
+              [
+                -164.8055,
+                1.9816
+              ],
+              [
+                -165.573,
+                1.6539
+              ],
+              [
+                -166.3403,
+                1.3259
+              ],
+              [
+                -166.8133,
+                2.1748
+              ],
+              [
+                -167.2868,
+                3.0236
+              ],
+              [
+                -167.761,
+                3.8722
+              ],
+              [
+                -168.2362,
+                4.7205
+              ],
+              [
+                -168.7126,
+                5.5686
+              ],
+              [
+                -169.1904,
+                6.4162
+              ],
+              [
+                -169.6697,
+                7.2634
+              ],
+              [
+                -170.1509,
+                8.11
+              ],
+              [
+                -170.6341,
+                8.9562
+              ],
+              [
+                -171.1195,
+                9.8016
+              ],
+              [
+                -171.6074,
+                10.6464
+              ],
+              [
+                -172.098,
+                11.4905
+              ],
+              [
+                -172.5916,
+                12.3337
+              ],
+              [
+                -173.0884,
+                13.176
+              ],
+              [
+                -173.5886,
+                14.0173
+              ],
+              [
+                -174.0924,
+                14.8576
+              ],
+              [
+                -174.6002,
+                15.6969
+              ],
+              [
+                -175.1122,
+                16.5349
+              ],
+              [
+                -175.6287,
+                17.3716
+              ],
+              [
+                -176.1499,
+                18.2071
+              ],
+              [
+                -176.6761,
+                19.0411
+              ],
+              [
+                -177.2076,
+                19.8736
+              ],
+              [
+                -177.7448,
+                20.7045
+              ],
+              [
+                -178.2878,
+                21.5337
+              ],
+              [
+                -178.8371,
+                22.3612
+              ],
+              [
+                -179.3929,
+                23.1867
+              ],
+              [
+                -179.9557,
+                24.0103
+              ],
+              [
+                -180,
+                23.9904
+              ]
+            ],
+            [
+              [
+                180,
+                23.9904
+              ],
+              [
+                179.1303,
+                23.5953
+              ],
+              [
+                178.2659,
+                23.1954
+              ],
+              [
+                177.4067,
+                22.7908
+              ],
+              [
+                176.8154,
+                23.6106
+              ],
+              [
+                176.2166,
+                24.4282
+              ],
+              [
+                175.6101,
+                25.2434
+              ],
+              [
+                174.9954,
+                26.0561
+              ],
+              [
+                174.3721,
+                26.8662
+              ],
+              [
+                173.7398,
+                27.6735
+              ],
+              [
+                173.0982,
+                28.4778
+              ],
+              [
+                172.4467,
+                29.2791
+              ],
+              [
+                171.7849,
+                30.0772
+              ],
+              [
+                171.1124,
+                30.872
+              ],
+              [
+                170.4286,
+                31.6632
+              ],
+              [
+                169.7332,
+                32.4507
+              ],
+              [
+                169.0255,
+                33.2342
+              ],
+              [
+                168.305,
+                34.0138
+              ],
+              [
+                167.5713,
+                34.789
+              ],
+              [
+                166.8236,
+                35.5598
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 1.2665,
+          "pid": 0,
+          "name": "Izanagi-Farallon MOR"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -149.0435,
+              -22.5252
+            ],
+            [
+              -108.9947,
+              -32.6663
+            ],
+            [
+              -108.5377,
+              -35.1277
+            ],
+            [
+              -82.6839,
+              -35.3163
+            ],
+            [
+              -83.6312,
+              -32.3502
+            ],
+            [
+              -55.7055,
+              -27.2635
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 1.5356,
+          "pid": 0,
+          "name": "Phoenix-Farallon MOR"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [
+                -151.0029,
+                -19.6067
+              ],
+              [
+                -151.8291,
+                -20.2219
+              ],
+              [
+                -152.6619,
+                -20.8331
+              ],
+              [
+                -153.5014,
+                -21.4404
+              ],
+              [
+                -154.3479,
+                -22.0434
+              ],
+              [
+                -155.2016,
+                -22.642
+              ],
+              [
+                -156.0627,
+                -23.236
+              ],
+              [
+                -156.9316,
+                -23.8254
+              ],
+              [
+                -157.8083,
+                -24.4098
+              ],
+              [
+                -158.6931,
+                -24.9891
+              ],
+              [
+                -159.5863,
+                -25.5631
+              ],
+              [
+                -160.4881,
+                -26.1317
+              ],
+              [
+                -161.3986,
+                -26.6946
+              ],
+              [
+                -162.3181,
+                -27.2516
+              ],
+              [
+                -163.2468,
+                -27.8026
+              ],
+              [
+                -164.1849,
+                -28.3473
+              ],
+              [
+                -165.1327,
+                -28.8855
+              ],
+              [
+                -166.0902,
+                -29.417
+              ],
+              [
+                -167.0578,
+                -29.9415
+              ],
+              [
+                -168.0356,
+                -30.459
+              ],
+              [
+                -169.0237,
+                -30.9691
+              ],
+              [
+                -170.0223,
+                -31.4715
+              ],
+              [
+                -171.0317,
+                -31.9662
+              ],
+              [
+                -172.0519,
+                -32.4528
+              ],
+              [
+                -172.4412,
+                -31.67
+              ],
+              [
+                -172.824,
+                -30.8861
+              ],
+              [
+                -173.2006,
+                -30.101
+              ],
+              [
+                -173.5712,
+                -29.3149
+              ],
+              [
+                -174.4639,
+                -29.7852
+              ],
+              [
+                -175.365,
+                -30.2494
+              ],
+              [
+                -176.2745,
+                -30.7074
+              ],
+              [
+                -177.1927,
+                -31.1589
+              ],
+              [
+                -178.1196,
+                -31.6039
+              ],
+              [
+                -179.0553,
+                -32.0422
+              ],
+              [
+                -180,
+                -32.4735
+              ]
+            ],
+            [
+              [
+                180,
+                -32.4735
+              ],
+              [
+                178.9626,
+                -32.9344
+              ],
+              [
+                177.9145,
+                -33.3866
+              ],
+              [
+                176.8554,
+                -33.8299
+              ],
+              [
+                175.7855,
+                -34.2641
+              ],
+              [
+                174.7046,
+                -34.6889
+              ],
+              [
+                173.6126,
+                -35.104
+              ],
+              [
+                172.5097,
+                -35.5093
+              ],
+              [
+                171.3956,
+                -35.9044
+              ],
+              [
+                170.2706,
+                -36.2891
+              ],
+              [
+                169.1345,
+                -36.6632
+              ],
+              [
+                167.9875,
+                -37.0264
+              ],
+              [
+                166.8297,
+                -37.3784
+              ],
+              [
+                165.6611,
+                -37.7191
+              ],
+              [
+                164.4819,
+                -38.0481
+              ],
+              [
+                163.2922,
+                -38.3652
+              ],
+              [
+                162.0923,
+                -38.6702
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.8436,
+          "pid": 0,
+          "name": "Phoenix-Izanagi MOR"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -68.5233,
+              32.8459
+            ],
+            [
+              -67.9867,
+              34.9695
+            ],
+            [
+              -67.0523,
+              36.4574
+            ],
+            [
+              -62.3715,
+              40.7203
+            ],
+            [
+              -53.849,
+              44.8421
+            ],
+            [
+              -46.5669,
+              47.7808
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.3973,
+          "pid": 101,
+          "name": "ALX SZ",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -46.5669,
+              47.7808
+            ],
+            [
+              -46.3947,
+              47.8412
+            ],
+            [
+              -39.6052,
+              49.3056
+            ],
+            [
+              -29.0526,
+              50.9426
+            ],
+            [
+              -21.4791,
+              51.3614
+            ],
+            [
+              -17.8071,
+              51.3492
+            ],
+            [
+              -8.9154,
+              53.0752
+            ],
+            [
+              -7.0656,
+              53.3596
+            ],
+            [
+              1.0612,
+              55.2713
+            ],
+            [
+              8.058,
+              55.5239
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.6075,
+          "pid": 101,
+          "name": "ALX SZ",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              102.0833,
+              51.795
+            ],
+            [
+              100.1433,
+              48.5752
+            ],
+            [
+              100.0061,
+              47.9595
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.0711,
+          "pid": 401,
+          "name": "Altai-Mongolian/Rudny-Altai/Chara subduction zone",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              100.0061,
+              47.9595
+            ],
+            [
+              99.3574,
+              44.8352
+            ],
+            [
+              96.4561,
+              40.5613
+            ],
+            [
+              95.2666,
+              37.4666
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.1948,
+          "pid": 401,
+          "name": "Altai-Mongolian/Rudny-Altai/Chara subduction zone",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              95.2666,
+              37.4666
+            ],
+            [
+              95.0913,
+              36.9862
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.0087,
+          "pid": 401,
+          "name": "Altai-Mongolian/Rudny-Altai/Chara subduction zone",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              88.3902,
+              -4.8199
+            ],
+            [
+              88.3326,
+              -4.1294
+            ],
+            [
+              89.1941,
+              -1.09
+            ],
+            [
+              90.3432,
+              1.2926
+            ],
+            [
+              91.7823,
+              3.1568
+            ],
+            [
+              92.3637,
+              3.7622
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.1691,
+          "pid": 604,
+          "name": "Annamia Transform"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              92.3637,
+              3.7622
+            ],
+            [
+              94.1347,
+              5.5981
+            ],
+            [
+              97.0117,
+              6.7836
+            ],
+            [
+              97.9867,
+              7.0368
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.1159,
+          "pid": 604,
+          "name": "Annamia Transform"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              153.0474,
+              7.9456
+            ],
+            [
+              148.6493,
+              8.7917
+            ],
+            [
+              145.5107,
+              11.6183
+            ],
+            [
+              138.0979,
+              12.0538
+            ],
+            [
+              131.4689,
+              13.4239
+            ],
+            [
+              130.3677,
+              13.6492
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.4117,
+          "pid": 601,
+          "name": "North China-Beishan subduction zone (PAO)",
+          "polarity": "Left"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              39.8518,
+              40.3475
+            ],
+            [
+              43.9868,
+              35.5492
+            ],
+            [
+              36.4001,
+              29.8497
+            ],
+            [
+              39.2077,
+              27.0542
+            ],
+            [
+              37.144,
+              24.5392
+            ],
+            [
+              47.7591,
+              13.0057
+            ],
+            [
+              49.8231,
+              14.8156
+            ],
+            [
+              50.3392,
+              14.5356
+            ],
+            [
+              52.4245,
+              16.1463
+            ],
+            [
+              57.9198,
+              10.4775
+            ],
+            [
+              59.7478,
+              11.9985
+            ],
+            [
+              60.5643,
+              11.4114
+            ],
+            [
+              63.8875,
+              13.7817
+            ],
+            [
+              67.7562,
+              10.4897
+            ],
+            [
+              68.797,
+              11.8464
+            ],
+            [
+              75.4864,
+              7.2664
+            ],
+            [
+              74.9037,
+              5.8272
+            ],
+            [
+              81.4026,
+              1.5908
+            ],
+            [
+              87.337,
+              -2.7649
+            ],
+            [
+              86.8823,
+              -3.8266
+            ],
+            [
+              88.3902,
+              -4.8199
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 1.603,
+          "pid": 0,
+          "name": "Paleotethys MOR"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [
+                -43.2463,
+                -28.4594
+              ],
+              [
+                -42.6791,
+                -29.1258
+              ],
+              [
+                -42.1046,
+                -29.7897
+              ],
+              [
+                -41.5224,
+                -30.4511
+              ],
+              [
+                -40.9322,
+                -31.1099
+              ],
+              [
+                -40.3338,
+                -31.766
+              ],
+              [
+                -40.0159,
+                -32.6907
+              ],
+              [
+                -39.6913,
+                -33.6146
+              ],
+              [
+                -39.3596,
+                -34.5377
+              ],
+              [
+                -39.0206,
+                -35.4598
+              ],
+              [
+                -38.6736,
+                -36.381
+              ],
+              [
+                -38.3184,
+                -37.3011
+              ],
+              [
+                -37.9544,
+                -38.2202
+              ],
+              [
+                -37.7562,
+                -39.0558
+              ],
+              [
+                -37.5532,
+                -39.8911
+              ],
+              [
+                -37.3453,
+                -40.7261
+              ],
+              [
+                -37.132,
+                -41.5607
+              ],
+              [
+                -36.9132,
+                -42.3948
+              ],
+              [
+                -36.6885,
+                -43.2286
+              ],
+              [
+                -36.6845,
+                -44.1235
+              ],
+              [
+                -36.6804,
+                -45.0184
+              ],
+              [
+                -36.6762,
+                -45.9134
+              ],
+              [
+                -36.6718,
+                -46.8083
+              ],
+              [
+                -36.6672,
+                -47.7033
+              ],
+              [
+                -36.6625,
+                -48.5982
+              ],
+              [
+                -37.0498,
+                -49.4824
+              ],
+              [
+                -37.4512,
+                -50.3651
+              ],
+              [
+                -37.8678,
+                -51.2465
+              ],
+              [
+                -38.3008,
+                -52.1263
+              ],
+              [
+                -38.7511,
+                -53.0045
+              ],
+              [
+                -39.2201,
+                -53.8808
+              ],
+              [
+                -39.9515,
+                -54.6684
+              ],
+              [
+                -40.7117,
+                -55.4513
+              ],
+              [
+                -41.5025,
+                -56.2294
+              ],
+              [
+                -42.3261,
+                -57.0021
+              ],
+              [
+                -43.1845,
+                -57.7693
+              ],
+              [
+                -44.0799,
+                -58.5304
+              ],
+              [
+                -45.0149,
+                -59.285
+              ],
+              [
+                -45.9921,
+                -60.0326
+              ],
+              [
+                -47.0144,
+                -60.7726
+              ],
+              [
+                -47.8602,
+                -61.5319
+              ],
+              [
+                -48.7482,
+                -62.2857
+              ],
+              [
+                -49.6816,
+                -63.0335
+              ],
+              [
+                -50.664,
+                -63.7748
+              ],
+              [
+                -51.6992,
+                -64.5091
+              ],
+              [
+                -52.7912,
+                -65.2358
+              ],
+              [
+                -53.9446,
+                -65.9541
+              ],
+              [
+                -54.9967,
+                -66.851
+              ],
+              [
+                -56.1284,
+                -67.7404
+              ],
+              [
+                -57.3489,
+                -68.6214
+              ],
+              [
+                -58.6687,
+                -69.4929
+              ],
+              [
+                -60.0996,
+                -70.3535
+              ],
+              [
+                -61.6552,
+                -71.2018
+              ],
+              [
+                -63.3511,
+                -72.036
+              ],
+              [
+                -64.0735,
+                -72.9091
+              ],
+              [
+                -64.871,
+                -73.7794
+              ],
+              [
+                -65.7563,
+                -74.6463
+              ],
+              [
+                -66.7445,
+                -75.5093
+              ],
+              [
+                -67.8548,
+                -76.3677
+              ],
+              [
+                -69.1107,
+                -77.2206
+              ],
+              [
+                -70.5423,
+                -78.0666
+              ],
+              [
+                -72.5362,
+                -78.9584
+              ],
+              [
+                -74.8724,
+                -79.8348
+              ],
+              [
+                -77.639,
+                -80.6916
+              ],
+              [
+                -80.9518,
+                -81.5229
+              ],
+              [
+                -84.9625,
+                -82.3202
+              ],
+              [
+                -89.8661,
+                -83.0721
+              ],
+              [
+                -96.1445,
+                -83.567
+              ],
+              [
+                -103.3623,
+                -83.9734
+              ],
+              [
+                -111.4709,
+                -84.2723
+              ],
+              [
+                -120.273,
+                -84.4464
+              ],
+              [
+                -129.4144,
+                -84.4838
+              ],
+              [
+                -138.6634,
+                -84.1336
+              ],
+              [
+                -146.6937,
+                -83.6503
+              ],
+              [
+                -153.4818,
+                -83.0617
+              ],
+              [
+                -159.1484,
+                -82.3923
+              ],
+              [
+                -163.8662,
+                -81.6613
+              ],
+              [
+                -167.8069,
+                -80.8838
+              ],
+              [
+                -171.1205,
+                -80.0705
+              ],
+              [
+                -173.9294,
+                -79.2296
+              ],
+              [
+                -176.2121,
+                -78.4939
+              ],
+              [
+                -178.2213,
+                -77.7427
+              ],
+              [
+                -180,
+                -76.9785
+              ]
+            ],
+            [
+              [
+                180,
+                -76.9785
+              ],
+              [
+                178.4443,
+                -76.2179
+              ],
+              [
+                177.0492,
+                -75.4485
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 1.3366,
+          "pid": 701,
+          "name": "West Gondwana (Panthalassa) subduction zone",
+          "polarity": "Left"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              131.6027,
+              27.101
+            ],
+            [
+              131.5353,
+              26.9542
+            ],
+            [
+              130.106,
+              24.7585
+            ],
+            [
+              129.3541,
+              21.4839
+            ],
+            [
+              127.7165,
+              19.3846
+            ],
+            [
+              125.7408,
+              17.1096
+            ],
+            [
+              122.948,
+              15.3142
+            ],
+            [
+              121.2208,
+              14.2664
+            ],
+            [
+              119.4866,
+              12.3298
+            ],
+            [
+              117.4666,
+              9.7413
+            ],
+            [
+              116.1956,
+              7.6227
+            ],
+            [
+              114.7662,
+              6.737
+            ],
+            [
+              113.1105,
+              6.0924
+            ],
+            [
+              111.9521,
+              6.1489
+            ],
+            [
+              110.3487,
+              6.5645
+            ],
+            [
+              107.0872,
+              5.504
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.6064,
+          "pid": 580,
+          "name": "SZ Kunlun",
+          "polarity": "Right"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              136.5454,
+              22.8332
+            ],
+            [
+              131.6027,
+              27.101
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.108,
+          "pid": 580,
+          "name": "Trasnform east of Alxa block"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              131.6027,
+              27.101
+            ],
+            [
+              131.2426,
+              27.3939
+            ],
+            [
+              128.5907,
+              27.879
+            ],
+            [
+              124.8768,
+              28.9632
+            ],
+            [
+              123.915,
+              29.593
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.1278,
+          "pid": 580,
+          "name": "Trasnform east of Alxa block"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              86.3475,
+              19.6514
+            ],
+            [
+              96.7113,
+              14.6306
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.1937,
+          "pid": 9012,
+          "name": "Transform bounding STO south"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              107.0872,
+              5.504
+            ],
+            [
+              105.5412,
+              4.093
+            ],
+            [
+              104.6581,
+              2.0646
+            ],
+            [
+              103.7245,
+              0.4282
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.1079,
+          "pid": 580,
+          "name": "TRM transform"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              92.3637,
+              3.7622
+            ],
+            [
+              100.7849,
+              2.0845
+            ],
+            [
+              100.7635,
+              1.0985
+            ],
+            [
+              103.7245,
+              0.4282
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.2199,
+          "pid": 0,
+          "name": "Western Mianlue spreading"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              103.7245,
+              0.4282
+            ],
+            [
+              105.5013,
+              0.0252
+            ],
+            [
+              105.5558,
+              -0.9211
+            ],
+            [
+              112.1208,
+              -1.47
+            ],
+            [
+              117.4309,
+              -2.7979
+            ],
+            [
+              118.3673,
+              0.3598
+            ],
+            [
+              121.6207,
+              -0.2366
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.374,
+          "pid": 0,
+          "name": "Western Mianlue spreading"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              121.6182,
+              -0.246
+            ],
+            [
+              127.8985,
+              -1.7444
+            ],
+            [
+              128.1863,
+              -3.4127
+            ],
+            [
+              142.9982,
+              -6.4923
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.4053,
+          "pid": 0,
+          "name": "Eastern Mianlue spreading"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              121.6182,
+              -0.246
+            ],
+            [
+              121.6207,
+              -0.2366
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.0002,
+          "pid": 601,
+          "name": "Mianlue transform"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              121.6207,
+              -0.2366
+            ],
+            [
+              121.8647,
+              0.6694
+            ],
+            [
+              122.6849,
+              2.7999
+            ],
+            [
+              126.5727,
+              5.8283
+            ],
+            [
+              129.5527,
+              10.2266
+            ],
+            [
+              129.7718,
+              12.7618
+            ],
+            [
+              130.3677,
+              13.6492
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.2974,
+          "pid": 601,
+          "name": "Mianlue transform"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              130.3677,
+              13.6492
+            ],
+            [
+              132.4372,
+              16.666
+            ],
+            [
+              136.5454,
+              22.8332
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.1902,
+          "pid": 601,
+          "name": "Mianlue transform"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              129.2517,
+              49.0414
+            ],
+            [
+              121.7561,
+              47.6443
+            ],
+            [
+              113.3671,
+              46.49
+            ],
+            [
+              107.2571,
+              47.2251
+            ],
+            [
+              100.1131,
+              47.9471
+            ],
+            [
+              100.0061,
+              47.9595
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.3523,
+          "pid": 430,
+          "name": "Amuria transform"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              102.0833,
+              51.795
+            ],
+            [
+              94.2008,
+              56.8705
+            ],
+            [
+              97.3242,
+              58.4367
+            ],
+            [
+              80.2453,
+              64.3791
+            ],
+            [
+              83.0358,
+              66.0211
+            ],
+            [
+              48.1609,
+              70.1298
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.6045,
+          "pid": 0,
+          "name": "Siberia-Amuria (Mongol-Okhotsk) MOR"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              149.4992,
+              48.7182
+            ],
+            [
+              149.6057,
+              48.66
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.0016,
+          "pid": 6022,
+          "name": "PAO transform north"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              149.6057,
+              48.66
+            ],
+            [
+              160.7046,
+              41.1454
+            ],
+            [
+              166.5128,
+              35.1831
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.3205,
+          "pid": 6022,
+          "name": "PAO transform north"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              149.6621,
+              48.7808
+            ],
+            [
+              149.4992,
+              48.7182
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.0022,
+          "pid": 0,
+          "name": "PAO mor"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              149.4992,
+              48.7182
+            ],
+            [
+              148.5117,
+              48.3304
+            ],
+            [
+              147.1241,
+              49.7248
+            ],
+            [
+              140.5975,
+              47.129
+            ],
+            [
+              142.1172,
+              45.6969
+            ],
+            [
+              128.4311,
+              37.8818
+            ],
+            [
+              130.9145,
+              35.6165
+            ],
+            [
+              125.4301,
+              30.9994
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.5513,
+          "pid": 0,
+          "name": "PAO mor"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              125.4301,
+              30.9994
+            ],
+            [
+              123.915,
+              29.593
+            ]
+          ]
+        },
+        "properties": {
+          "type": "MidOceanRidge",
+          "length": 0.0335,
+          "pid": 0,
+          "name": "PAO mor"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              114.1857,
+              35.1857
+            ],
+            [
+              114.948,
+              35.0293
+            ],
+            [
+              118.3393,
+              34.1329
+            ],
+            [
+              122.6805,
+              32.3979
+            ],
+            [
+              125.4301,
+              30.9994
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.1802,
+          "pid": 9012,
+          "name": "Transform bounding STO north"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              129.954,
+              -14.2491
+            ],
+            [
+              131.4459,
+              -12.3666
+            ],
+            [
+              133.9133,
+              -10.5887
+            ],
+            [
+              136.0643,
+              -9.3516
+            ],
+            [
+              142.9982,
+              -6.4923
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.2665,
+          "pid": 601,
+          "name": "Panthalassa TRANSFORM estern China"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              142.9982,
+              -6.4923
+            ],
+            [
+              143.0093,
+              -6.4876
+            ],
+            [
+              149.1244,
+              -1.8337
+            ],
+            [
+              151.9482,
+              4.2606
+            ],
+            [
+              153.0474,
+              7.9456
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.3184,
+          "pid": 601,
+          "name": "Panthalassa TRANSFORM estern China"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              153.0474,
+              7.9456
+            ],
+            [
+              154.0761,
+              11.3337
+            ],
+            [
+              157.9442,
+              19.6884
+            ],
+            [
+              163.5074,
+              31.3145
+            ],
+            [
+              166.5128,
+              35.1831
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.5228,
+          "pid": 601,
+          "name": "Panthalassa TRANSFORM estern China"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              166.5128,
+              35.1831
+            ],
+            [
+              166.8236,
+              35.5598
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.0079,
+          "pid": 601,
+          "name": "Panthalassa TRANSFORM estern China"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -48.5028,
+              -30.7945
+            ],
+            [
+              -43.2463,
+              -28.4594
+            ]
+          ]
+        },
+        "properties": {
+          "type": "Transform",
+          "length": 0.0895,
+          "pid": 701,
+          "name": "Tranform connecting subduction"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              114.1857,
+              35.1857
+            ],
+            [
+              113.6433,
+              32.5552
+            ],
+            [
+              112.0898,
+              30.0627
+            ],
+            [
+              110.4858,
+              28.1388
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.1374,
+          "pid": 9012,
+          "name": "Paleo-Tianshan Ocean SZ on northern margin of CTB",
+          "polarity": "Left"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              110.4858,
+              28.1388
+            ],
+            [
+              109.9808,
+              27.5142
+            ],
+            [
+              107.8122,
+              25.3343
+            ],
+            [
+              105.1352,
+              23.4279
+            ],
+            [
+              103.8607,
+              22.6693
+            ],
+            [
+              102.2643,
+              20.6669
+            ],
+            [
+              100.4968,
+              19.358
+            ],
+            [
+              99.6525,
+              17.594
+            ],
+            [
+              98.1086,
+              16.1912
+            ],
+            [
+              96.7113,
+              14.6306
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.3285,
+          "pid": 9012,
+          "name": "Paleo-Tianshan Ocean SZ on northern margin of CTB",
+          "polarity": "Left"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              96.7113,
+              14.6306
+            ],
+            [
+              96.5432,
+              14.4408
+            ],
+            [
+              96.6316,
+              13.1247
+            ],
+            [
+              97.1459,
+              11.178
+            ],
+            [
+              97.5372,
+              10.0839
+            ],
+            [
+              97.9783,
+              8.4631
+            ],
+            [
+              97.9867,
+              7.0368
+            ]
+          ]
+        },
+        "properties": {
+          "type": "SubductionZone",
+          "length": 0.1369,
+          "pid": 9012,
+          "name": "Paleo-Tianshan Ocean SZ on northern margin of CTB",
+          "polarity": "Left"
+        }
+      }
+    ]
+  }
+}

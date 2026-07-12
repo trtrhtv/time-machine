@@ -38,7 +38,7 @@
     "frameFollow": "Follow the drifting ground",
     "frameFixed": "Stand at today's coordinates",
     "frameFixedNote": "You are standing still at today's latitude/longitude (blue dot) while the continents move through this point (in the model's reference frame).",
-    "satelliteHonesty": "Satellite-style artistic rendering on open reconstruction data. Coastlines are real (muller2022, full source resolution); terrain texture and climate colors are a latitude-based stylization — no satellite photographed the deep past, and positions carry ±100 km+ uncertainty.",
+    "satelliteHonesty": "Satellite-style artistic rendering on open reconstruction data. Coastlines are real (muller2022, full source resolution) and mountain ranges rise where the model's plates collide (reconstructed subduction zones and orogenic belts); their exact shapes, and all rivers, are artistic texture — no satellite photographed the deep past, and positions carry ±100 km+ uncertainty.",
     "beyondData": "Beyond data resolution — texture is artistic",
     "dragHint": "Drag to pan · scroll or +/− to zoom",
     "mapSharpening": "sharpening…",

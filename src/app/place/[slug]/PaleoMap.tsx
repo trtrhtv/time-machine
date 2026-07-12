@@ -53,6 +53,8 @@ export function PaleoMap({
   const [failed, setFailed] = useState(false);
   const inFlight = useRef(new Set<string>());
 
+  const [beltGrids, setBeltGrids] = useState<Record<string, EpochGrid>>({});
+
   useEffect(() => {
     fetch("/paleomap/coastlines.json")
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
@@ -63,6 +65,18 @@ export function PaleoMap({
         setWorldGrids(grids);
       })
       .catch(() => setFailed(true));
+    // mountain-belt lines (convergent plate boundaries) — tiny, non-critical
+    fetch("/paleomap/boundaries.json")
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
+      .then((d: WorldFile) => {
+        const grids: Record<string, EpochGrid> = {};
+        for (const [ma, shapes] of Object.entries(d.epochs))
+          grids[ma] = { gridW: d.width, gridH: d.height, shapes };
+        setBeltGrids(grids);
+      })
+      .catch(() => {
+        // renderer degrades gracefully to belt-free terrain
+      });
   }, []);
 
   useEffect(() => {
@@ -119,7 +133,7 @@ export function PaleoMap({
         canvas.width = w;
         canvas.height = h;
       }
-      const res = renderSatellite(canvas, grid, view, epochMa);
+      const res = renderSatellite(canvas, grid, view, epochMa, beltGrids[String(epochMa)] ?? null);
       setKmAcross(res.kmAcross);
       // pin overlay: drawn straight onto the canvas after the raster
       const ctx = canvas.getContext("2d")!;
@@ -147,7 +161,7 @@ export function PaleoMap({
       if (hasPin) drawPin(pinLon!, pinLat!, "#ef4444");
       if (lock === "fixed") drawPin(modernLon, modernLat, "#38bdf8");
     });
-  }, [grid, view, epochMa, hasPin, pinLat, pinLon, lock, modernLat, modernLon]);
+  }, [grid, beltGrids, view, epochMa, hasPin, pinLat, pinLon, lock, modernLat, modernLon]);
 
   useEffect(draw, [draw]);
   useEffect(() => {
