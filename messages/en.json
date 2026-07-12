@@ -35,8 +35,15 @@
     "scrubberLabel": "Travel through time",
     "viewWorld": "Whole world",
     "viewLocal": "Around this spot",
-    "localHonesty": "Coastlines only — positions carry ±100 km+ uncertainty, so rivers, valleys, and individual mountains at this spot cannot be known from any reliable reconstruction.",
+    "frameFollow": "Follow the drifting ground",
+    "frameFixed": "Stand at today's coordinates",
+    "frameFixedNote": "You are standing still at today's latitude/longitude while the continents move through this point (in the model's reference frame).",
+    "localHonesty": "Coastlines at full source resolution — positions carry ±100 km+ uncertainty, so rivers, valleys, and individual mountains at this spot cannot be known from any reliable reconstruction.",
+    "landColorNote": "Land colors are a latitude-based climate stylization, not measured terrain.",
+    "mapSharpening": "sharpening…",
     "mapLoading": "Loading the ancient world…",
-    "mapUnavailable": "Map data unavailable"
+    "mapUnavailable": "Map data unavailable",
+    "play": "▶ Play journey",
+    "pause": "⏸ Pause"
   }
 }

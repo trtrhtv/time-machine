@@ -43,6 +43,11 @@ const LEVELS: Level[] = [
   { file: "coastlines-hd.json", width: 4000, height: 2000, tolerance: 1.0, minSpan: 3 },
 ];
 
+// Maximum available detail: EVERY source point, no simplification, no island
+// dropped. This is the full resolution of the open GPlates coastline data —
+// there is nothing finer to extract. One file per epoch, lazy-loaded.
+const FULL: Level = { file: "coastlines-full", width: 8000, height: 4000, tolerance: 0, minSpan: 0 };
+
 const { epochsMa } = JSON.parse(
   readFileSync(join(DATA, "validation", "places.json"), "utf8"),
 ) as { epochsMa: number[] };
@@ -130,7 +135,7 @@ function buildEpoch(raw: FeatureCollection, level: Level): number[][] {
     if (!outer || outer.length < 4) continue;
     const projected = outer.map(([lon, lat]) => project(lon, lat));
     for (const seg of splitAtSeam(projected)) {
-      const simplified = douglasPeucker(seg, tolerance);
+      const simplified = tolerance > 0 ? douglasPeucker(seg, tolerance) : seg;
       if (simplified.length < 3 || bboxSpan(simplified) < minSpan) continue;
       // Flat [x0,y0,x1,y1,...] of rounded ints for compactness.
       shapes.push(simplified.flatMap(([x, y]) => [Math.round(x), Math.round(y)]));
@@ -164,6 +169,19 @@ function main() {
     writeFileSync(file, JSON.stringify(out));
     const kb = (readFileSync(file).length / 1024).toFixed(0);
     console.log(`  → ${totalPts} points total, ${kb} KB`);
+  }
+
+  // Full resolution: one file per epoch so the browser only pays for the
+  // epochs it actually views (or prefetches during play).
+  console.log(`\n${FULL.file}-<ma>.json (${FULL.width}×${FULL.height}, every source point):`);
+  for (const ma of epochsMa) {
+    const shapes = buildEpoch(rawByMa.get(ma)!, FULL);
+    const pts = shapes.reduce((s, r) => s + r.length / 2, 0);
+    const out = { model: MODEL, width: FULL.width, height: FULL.height, ma, shapes };
+    const file = join(OUT_DIR, `${FULL.file}-${ma}.json`);
+    writeFileSync(file, JSON.stringify(out));
+    const kb = (readFileSync(file).length / 1024).toFixed(0);
+    console.log(`  ${String(ma).padStart(3)} Ma → ${shapes.length} shapes, ${pts} points, ${kb} KB`);
   }
 }
 

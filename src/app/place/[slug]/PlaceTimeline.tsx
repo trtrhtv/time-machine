@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import type { PlaceResult } from "@/lib/validation";
 import { epochLabel, accuracyNote, getArchetype } from "@/lib/validation";
@@ -26,6 +26,27 @@ export function PlaceTimeline({ place, model, license, generatedAt }: Props) {
   const scene = sceneFor(epoch.archetypeId, epoch.status);
   const arch = getArchetype(epoch.archetypeId);
   const formed = epoch.status === "ok";
+
+  // Play: run the journey from deep time toward today (right → left on the
+  // scrubber). Pressing play from "today" restarts at the oldest epoch.
+  const [playing, setPlaying] = useState(false);
+  useEffect(() => {
+    if (!playing) return;
+    const id = setInterval(() => {
+      setI((prev) => {
+        if (prev <= 0) {
+          setPlaying(false);
+          return prev;
+        }
+        return prev - 1;
+      });
+    }, 1800);
+    return () => clearInterval(id);
+  }, [playing]);
+  function togglePlay() {
+    if (!playing && i === 0) setI(place.epochs.length - 1);
+    setPlaying((p) => !p);
+  }
 
   const [copied, setCopied] = useState(false);
   async function share() {
@@ -54,9 +75,13 @@ export function PlaceTimeline({ place, model, license, generatedAt }: Props) {
           the location drifting across the planet as you scrub. */}
       <PaleoMap
         epochMa={epoch.ma}
+        epochsMa={place.epochs.map((e) => e.ma)}
         pinLat={epoch.paleoLat}
         pinLon={epoch.paleoLon}
+        modernLat={place.lat}
+        modernLon={place.lon}
         placeName={place.name}
+        playing={playing}
       />
 
       {/* Environment + climate strip */}
@@ -76,11 +101,20 @@ export function PlaceTimeline({ place, model, license, generatedAt }: Props) {
         </div>
       </div>
 
-      {/* Scrubber */}
+      {/* Scrubber + play */}
       <div className="flex flex-col gap-3">
-        <label htmlFor="epoch" className="text-sm font-medium text-black/55 dark:text-white/55">
-          {t("scrubberLabel")}
-        </label>
+        <div className="flex items-center justify-between">
+          <label htmlFor="epoch" className="text-sm font-medium text-black/55 dark:text-white/55">
+            {t("scrubberLabel")}
+          </label>
+          <button
+            type="button"
+            onClick={togglePlay}
+            className="rounded-full bg-foreground px-4 py-1.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+          >
+            {playing ? t("pause") : t("play")}
+          </button>
+        </div>
         <input
           id="epoch"
           type="range"
@@ -88,7 +122,10 @@ export function PlaceTimeline({ place, model, license, generatedAt }: Props) {
           max={place.epochs.length - 1}
           step={1}
           value={i}
-          onChange={(e) => setI(Number(e.target.value))}
+          onChange={(e) => {
+            setPlaying(false);
+            setI(Number(e.target.value));
+          }}
           className="w-full accent-foreground"
           aria-valuetext={epochLabel(epoch.ma)}
         />
