@@ -38,3 +38,29 @@ npm run validate     # build-time GPlates validation pipeline (see scripts/)
 
 The validation pipeline caches every GPlates Web Service response under
 `data/cache/`, so reruns cost zero external calls.
+
+```bash
+npm run build        # production build (all place pages prerendered as static)
+npm run start        # serve the production build locally
+```
+
+## Deploy (Vercel)
+
+The validation site is a standard Next.js App Router app — import the GitHub
+repo at [vercel.com/new](https://vercel.com/new) and it auto-detects everything.
+
+- **Framework preset:** Next.js (auto). Build `next build`, install `npm install`.
+- **Build settings / env vars:** none required. The GPlates Web Service is used
+  at build time by `npm run validate` only; the committed `data/validation/` and
+  `data/cache/` outputs are what the site serves, so the running app makes zero
+  external calls and needs no secrets.
+- **Node:** 20+ (matches `@types/node`).
+
+### Waitlist persistence (read before launch)
+
+The Phase 0 waitlist (`src/app/actions.ts`) writes to a local JSONL file in
+dev. On Vercel the filesystem is read-only, so it falls back to a structured
+server-log line (`[waitlist] {...}` in the Vercel function logs) — signups are
+recorded but not queryable. **Before a real launch, wire Supabase** (Phase 5):
+add `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` env vars and replace the sink
+in `joinWaitlist`. The form and its state contract stay the same.
