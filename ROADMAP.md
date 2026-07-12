@@ -17,11 +17,12 @@ English base with next-intl from day one (Hebrew later as a translation file).
 Goal: prove the concept resonates before building the engine.
 
 - [x] Repo init: Next.js (App Router, TS, Tailwind), next-intl, this roadmap.
-- [ ] **Task 0.2:** run 10 iconic places × 7 epochs (20/66/90/150/250/400/540 Ma)
+- [x] **Task 0.2:** run 10 iconic places × 7 epochs (20/66/90/150/250/400/540 Ma)
       through GPlates Web Service → `data/validation/results.json` +
       human-readable `data/validation/RESULTS.md`. Cache-first, polite rate
       limiting, sanity flags for manual cross-check.
-- [ ] Validation site: the 10 places, static pages, share buttons, waitlist
+      (RESULTS.md reviewed + cross-checked → `data/validation/REVIEW.md`.)
+- [x] Validation site: the 10 places, static pages, share buttons, waitlist
       signup. (Design starts only after RESULTS.md review.)
 
 **→ Decision gate:** traction/feedback review before Phase 1.

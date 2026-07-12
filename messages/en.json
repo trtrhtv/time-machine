@@ -1,6 +1,37 @@
 {
   "HomePage": {
     "title": "Local Time Machine",
-    "tagline": "See what your home looked like millions of years ago."
+    "tagline": "See what your home looked like millions of years ago.",
+    "intro": "Pick a place. Travel back through deep time and see the ground beneath it drift across the planet — ocean, tropics, ice, and back again.",
+    "placesHeading": "Ten places, seven epochs",
+    "placesSub": "A validation preview built from open plate-reconstruction models. Every result carries its own honesty box.",
+    "viewPlace": "Explore {name}",
+    "waitlistHeading": "Want your own place?",
+    "waitlistSub": "We're building the full version — any spot on Earth, every epoch. Leave your email and we'll tell you when it's live.",
+    "waitlistPlaceholder": "you@example.com",
+    "waitlistButton": "Join the waitlist",
+    "waitlistPending": "Adding you…",
+    "waitlistSuccess": "You're on the list. Thanks for the curiosity.",
+    "waitlistInvalid": "That doesn't look like an email address.",
+    "waitlistError": "Something went wrong. Please try again."
+  },
+  "Place": {
+    "back": "← All places",
+    "todayLabel": "Today",
+    "atEpoch": "{name}, {epoch}",
+    "position": "Paleo-position",
+    "environment": "Environment",
+    "band": "Latitude band",
+    "notFormedTitle": "The ground here hadn't been born yet",
+    "notFormedBody": "At this point in deep time, the crust beneath {name} did not exist. It would form later.",
+    "accuracyTitle": "How accurate is this?",
+    "accuracyModel": "Model: {model} ({license}).",
+    "accuracyEnvelope": "Position uncertainty at this epoch: {envelope}.",
+    "accuracyCoastline": "Land vs. ocean is judged against reconstructed modern coastlines, so shallow inland seas can read as \"land.\"",
+    "accuracyGenerated": "Reconstruction generated {generated}.",
+    "shareTitle": "Share this journey",
+    "shareButton": "Share",
+    "shareCopied": "Link copied",
+    "scrubberLabel": "Travel through time"
   }
 }
