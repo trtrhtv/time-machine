@@ -48,17 +48,24 @@ function vnoise(x: number, y: number, seed: number): number {
   return a + (b - a) * fx + (c - a) * fy + (a - b - c + d) * fx * fy;
 }
 
-/** 4-octave fBm; freq in cycles per degree. */
+// Anti-aliasing cutoff: octaves whose wavelength falls under ~2 output pixels
+// alias into per-pixel speckle (the "TV static" ice caps). Set per render.
+let AA_MAX_FREQ = Infinity;
+
+/** 4-octave fBm; freq in cycles per degree. Octaves past the AA cutoff are skipped. */
 function fbm(lon: number, lat: number, freq: number, seed: number): number {
   let v = 0;
   let amp = 0.5;
   let f = freq;
+  let norm = 0;
   for (let o = 0; o < 4; o++) {
+    if (f > AA_MAX_FREQ) break;
     v += amp * vnoise(lon * f + 512, lat * f + 512, seed + o);
+    norm += amp;
     amp *= 0.5;
     f *= 2.1;
   }
-  return v; // ~0..0.94
+  return norm > 0 ? (v / norm) * 0.94 : 0.47; // keep the 0..~0.94 scale stable
 }
 
 /** Ridged multifractal — sharp crests, reads as mountain ranges. */
@@ -66,14 +73,17 @@ function ridged(lon: number, lat: number, freq: number, seed: number): number {
   let v = 0;
   let amp = 0.55;
   let f = freq;
+  let norm = 0;
   for (let o = 0; o < 3; o++) {
+    if (f > AA_MAX_FREQ) break;
     const n = vnoise(lon * f + 907, lat * f + 907, seed + o * 7);
     const r = 1 - Math.abs(2 * n - 1);
     v += amp * r * r;
+    norm += amp;
     amp *= 0.5;
     f *= 2.2;
   }
-  return v; // ~0..1
+  return norm > 0 ? (v / norm) * 0.96 : 0.4;
 }
 
 // ---------- palettes ----------
@@ -185,18 +195,30 @@ export function renderSatellite(
   mask.height = bufH;
   const mctx = mask.getContext("2d", { willReadFrequently: true })!;
   const path = epochPath(grid);
-  // shelf halo: land stroked wide, in red channel; land fill in green channel.
+  const degToGrid = grid.gridW / 360;
+  // Shelf halo → red channel as a smooth GRADED field (layered strokes with
+  // additive blending and round joins — miter joins produce ugly spikes).
   mctx.save();
   mctx.scale(scaleX, scaleX);
-  // draw three world copies so the antimeridian seam never shows a gap
-  for (const off of [-grid.gridW, 0, grid.gridW]) {
-    mctx.save();
-    mctx.translate(-gx0 + off, -gy0);
-    mctx.strokeStyle = "#ff0000";
-    mctx.lineWidth = Math.max(2 / scaleX, 0.9 / degPerPx / scaleX * 0.9); // ~0.9° shelf
-    mctx.stroke(path);
-    mctx.restore();
+  mctx.lineCap = "round";
+  mctx.lineJoin = "round";
+  mctx.globalCompositeOperation = "lighter";
+  for (const [deg, alpha] of [
+    [2.4, 0.25],
+    [1.2, 0.3],
+    [0.5, 0.3],
+  ] as const) {
+    mctx.strokeStyle = `rgba(255,0,0,${alpha})`;
+    mctx.lineWidth = deg * degToGrid;
+    // draw three world copies so the antimeridian seam never shows a gap
+    for (const off of [-grid.gridW, 0, grid.gridW]) {
+      mctx.save();
+      mctx.translate(-gx0 + off, -gy0);
+      mctx.stroke(path);
+      mctx.restore();
+    }
   }
+  mctx.globalCompositeOperation = "source-over";
   for (const off of [-grid.gridW, 0, grid.gridW]) {
     mctx.save();
     mctx.translate(-gx0 + off, -gy0);
@@ -215,9 +237,12 @@ export function renderSatellite(
     mctx.lineCap = "round";
     mctx.lineJoin = "round";
     for (const [deg, alpha] of [
-      [7, 0.3],
-      [3.5, 0.45],
-      [1.5, 0.7],
+      [9, 0.1],
+      [7, 0.12],
+      [5.2, 0.15],
+      [3.6, 0.18],
+      [2.2, 0.2],
+      [1.2, 0.22],
     ] as const) {
       mctx.strokeStyle = `rgba(0,0,255,${alpha})`;
       mctx.lineWidth = deg * degToBelt;
@@ -237,15 +262,19 @@ export function renderSatellite(
   // --- per-pixel colorize ---
   const img = new ImageData(bufW, bufH);
   const px = img.data;
-  // noise frequencies scale with zoom so detail is always present
-  const fTerrain = 3 / view.lonSpan * 24; // ~24 features across the view
-  const fMoist = Math.max(0.15, (3 / view.lonSpan) * 6);
-  const fMicro = fTerrain * 5;
+  // GEO-ANCHORED frequencies (cycles per degree): the landscape must not
+  // shift when the user zooms. Only micro grain scales with the view.
+  const fTerrain = 0.9;
+  const fMoist = 0.22;
+  const fRiver = 0.5;
+  const fMicro = Math.min(40, (24 / view.lonSpan) * 5);
+  const zoomedIn = view.lonSpan < 90;
+  // octaves finer than ~2.5 px would alias into speckle — skip them
+  AA_MAX_FREQ = 1 / (2.5 * degPerPx);
 
   const idxLand = (i: number) => m[i * 4 + 1] > 96; // green channel
-  const idxShelf = (i: number) => m[i * 4] > 40; // red channel
+  const shelfAt = (i: number) => m[i * 4] / 255; // red channel: 0..1 graded shelf proximity
   const idxBelt = (i: number) => m[i * 4 + 2] / 255; // blue channel: 0..1 mountain-belt proximity
-  const fRiver = fTerrain * 0.55;
 
   for (let y = 0; y < bufH; y++) {
     const lat = latT - (y + 0.5) * degPerPx;
@@ -259,71 +288,88 @@ export function renderSatellite(
       let c: RGB;
 
       if (land) {
-        const jitter = (fbm(lon, lat, 0.35, epochSeed + 11) - 0.47) * 9;
+        const jitter = (fbm(lon, lat, 0.15, epochSeed + 11) - 0.47) * 10;
         const absLat = aLatBase + jitter;
-        const moisture = fbm(lon, lat, fMoist, epochSeed + 23);
+        // moisture blends a continental-scale field with regional variation so
+        // deserts come out patchy, not a uniform latitude stripe
+        const moisture =
+          0.55 * fbm(lon, lat, 0.07, epochSeed + 29) + 0.45 * fbm(lon, lat, fMoist, epochSeed + 23);
         const rough = fbm(lon, lat, fMicro, epochSeed + 37);
         c = landColor(absLat, moisture, rough);
+        // continent-scale albedo variation — real land is not one flat tone
+        const albedo = 0.93 + 0.14 * fbm(lon, lat, 0.05, epochSeed + 41);
+        c = [c[0] * albedo, c[1] * albedo, c[2] * albedo];
 
         // elevation: base rolling terrain + ridged ranges amplified near
-        // convergent plate boundaries (where the model says mountains grew)
-        const belt = idxBelt(i);
+        // convergent plate boundaries (where the model says mountains grew).
+        // smoothstep on the belt field hides the stroke-layer quantization.
+        const beltRaw = idxBelt(i);
+        const belt = beltRaw * beltRaw * (3 - 2 * beltRaw);
         const ridge = ridged(lon, lat, fTerrain * 0.8, epochSeed + 91);
-        const elev = fbm(lon, lat, fTerrain, epochSeed + 5) * 0.5 + ridge * (0.18 + 0.85 * belt);
+        const elev = fbm(lon, lat, fTerrain, epochSeed + 5) * 0.5 + ridge * (0.18 + 0.62 * belt);
 
-        // high ground: fade grass/forest into rock, then snow. The snowline
-        // drops toward the poles.
-        const rockFrom = 0.52;
-        if (elev > rockFrom) c = mix(c, ROCK, Math.min(1, (elev - rockFrom) / 0.22));
-        const snowline = 0.8 - (Math.min(Math.abs(lat), 90) / 90) * 0.28;
-        if (elev > snowline) c = mix(c, SNOW, Math.min(1, (elev - snowline) / 0.1));
+        // high ground: fade grass/forest into rock, then snow — only the
+        // crests go white, not whole belts. The snowline drops poleward.
+        const rockFrom = 0.5;
+        if (elev > rockFrom) c = mix(c, ROCK, Math.min(1, (elev - rockFrom) / 0.28));
+        const snowline = 0.92 - (Math.min(Math.abs(lat), 90) / 90) * 0.3;
+        if (elev > snowline) c = mix(c, SNOW, Math.min(1, (elev - snowline) / 0.16));
 
-        // hillshade from the full heightfield gradient (NW light), stronger
-        // relief inside mountain belts
-        const e = 0.35 / fTerrain;
+        // hillshade from the heightfield gradient (NW light). Slope is taken
+        // per-degree and normalized by the sample step, so relief stays
+        // strong and consistent at every zoom; belts get extra drama.
+        const e = Math.max(0.12, degPerPx * 1.5);
         const hAt = (lo: number, la: number) =>
           fbm(lo, la, fTerrain, epochSeed + 5) * 0.5 +
           ridged(lo, la, fTerrain * 0.8, epochSeed + 91) * (0.18 + 0.85 * belt);
-        const hx = hAt(lon + e, lat) - elev;
-        const hy = hAt(lon, lat - e) - elev;
-        const shade = 1 + (hx + hy) * (2.2 + 2.5 * belt);
-        const s = Math.max(0.62, Math.min(1.25, shade));
+        const slope = (hAt(lon + e, lat) - elev + (hAt(lon, lat - e) - elev)) / e;
+        const shade = 1 + slope * (0.55 + 0.6 * belt);
+        const s = Math.max(0.55, Math.min(1.35, shade));
         c = [c[0] * s, c[1] * s, c[2] * s];
+        // hypsometric lift: higher ground reads slightly lighter/warmer
+        c = [c[0] * (0.94 + 0.18 * elev), c[1] * (0.94 + 0.15 * elev), c[2] * (0.94 + 0.1 * elev)];
 
-        // rivers: meandering contour threads of a domain-warped field,
-        // only across humid low ground — artistic, labeled as such
-        if (moisture > 0.34 && elev < snowline && absLat < 70) {
-          const warp = fbm(lon, lat, fRiver * 0.5, epochSeed + 101) * 2.4;
+        // rivers: meandering threads across humid low ground — only visible
+        // once zoomed in, thin and translucent (artistic, labeled as such)
+        if (zoomedIn && moisture > 0.4 && elev < snowline && absLat < 70) {
+          const warp = fbm(lon, lat, fRiver * 0.4, epochSeed + 101) * 2.0;
           const q = fbm(lon + warp, lat - warp, fRiver, epochSeed + 113);
           const dRiver = Math.abs(q - 0.5);
-          const width = 0.004 + 0.01 * Math.max(0, 0.5 - elev);
+          const width = 0.0035 + 0.006 * Math.max(0, 0.45 - elev);
           if (dRiver < width) {
             const t = 1 - dRiver / width;
-            c = mix(c, RIVER, 0.75 * t);
+            c = mix(c, RIVER, 0.55 * t);
           }
         }
 
-        // beach: land pixel whose 2px neighborhood touches ocean
-        const n = i - 2 * bufW;
-        const sIdx = i + 2 * bufW;
-        const touchingOcean =
-          (x > 1 && !idxLand(i - 2)) ||
-          (x < bufW - 2 && !idxLand(i + 2)) ||
-          (n >= 0 && !idxLand(n)) ||
-          (sIdx < bufW * bufH && !idxLand(sIdx));
-        if (touchingOcean) c = mix(c, BEACH, 0.65);
-      } else {
-        const depthN = fbm(lon, lat, fTerrain * 0.6, epochSeed + 51);
-        c = mix(DEEP_OCEAN, ABYSS, depthN);
-        if (idxShelf(i)) {
-          const t = fbm(lon, lat, fMicro * 0.6, epochSeed + 63);
-          c = mix(SHELF, COASTAL, t * 0.8);
+        // beach: a subtle 1px shoreline tint, only when zoomed in — at world
+        // view a "beach" would be an 80 km-wide halo
+        if (zoomedIn) {
+          const n = i - bufW;
+          const sIdx = i + bufW;
+          const touchingOcean =
+            (x > 0 && !idxLand(i - 1)) ||
+            (x < bufW - 1 && !idxLand(i + 1)) ||
+            (n >= 0 && !idxLand(n)) ||
+            (sIdx < bufW * bufH && !idxLand(sIdx));
+          if (touchingOcean) c = mix(c, BEACH, 0.4);
         }
-        // sea ice near the poles
-        if (aLatBase > 66) {
-          const icy = fbm(lon, lat, fTerrain, epochSeed + 77);
-          const amt = Math.min(1, (aLatBase - 66) / 8 + (icy - 0.5));
-          if (amt > 0) c = mix(c, SEA_ICE, Math.min(1, amt));
+      } else {
+        // ocean: deep tone with slow basin variation, brightening smoothly
+        // across the graded shelf toward the coast
+        const depthN = fbm(lon, lat, 0.25, epochSeed + 51);
+        c = mix(DEEP_OCEAN, ABYSS, depthN);
+        const shelf = shelfAt(i);
+        if (shelf > 0.02) {
+          const sh = Math.pow(Math.min(1, shelf * 1.1), 0.8) * 0.85;
+          const tone = fbm(lon, lat, fMoist, epochSeed + 63);
+          c = mix(c, mix(SHELF, COASTAL, tone * 0.7), sh);
+        }
+        // sea ice: solid cap with a slow, wide-wavelength edge — not speckle
+        if (aLatBase > 58) {
+          const edge = (fbm(lon, lat, 0.12, epochSeed + 77) - 0.5) * 10;
+          const t = (aLatBase - (68 + edge)) / 5;
+          if (t > 0) c = mix(c, SEA_ICE, Math.min(1, t));
         }
       }
 
