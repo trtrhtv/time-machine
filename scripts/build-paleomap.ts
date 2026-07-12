@@ -4,11 +4,15 @@
  * The validation run cached full-resolution reconstructed coastlines from the
  * GPlates Web Service (open data) in data/cache/ — ~2,300 polygons / ~8 MB per
  * epoch. That's far too heavy to ship to the browser. This script simplifies
- * each epoch into one compact, projected map file the simulator can load and
- * scrub through smoothly.
+ * each epoch into compact, projected map files the simulator can load and
+ * scrub through smoothly:
+ *
+ *   coastlines.json     1000×500 grid, aggressive simplify — the world view
+ *   coastlines-hd.json  4000×2000 grid, light simplify — the zoomed local view
+ *                       ("around this spot"), lazy-loaded only when needed
  *
  * Source of truth: the SAME cached muller2022 coastlines the validation used —
- * no new API calls, no re-fetch. Output: data/paleomap/coastlines.json.
+ * no new API calls, no re-fetch.
  *
  * Run: npm run build:paleomap
  */
@@ -18,29 +22,32 @@ import type { FeatureCollection, Polygon } from "geojson";
 
 const DATA = join(process.cwd(), "data");
 const CACHE = join(DATA, "cache");
-// Served as a static asset so the browser loads + caches it once across all
+// Served as static assets so the browser loads + caches them once across all
 // place pages. Regenerated from data/cache/ by `npm run build:paleomap`.
 const OUT_DIR = join(process.cwd(), "public", "paleomap");
 const MODEL = "muller2022";
 
-// Equirectangular projection target box (2:1). Coordinates are rounded to
-// integers in this space so the shipped JSON stays tiny.
-const W = 1000;
-const H = 500;
-// Douglas–Peucker tolerance in projected units (~1 px on a 1000-wide map).
-const TOLERANCE = 1.2;
-// Drop islands smaller than this bounding-box span (projected units).
-const MIN_SPAN = 4;
+interface Level {
+  file: string;
+  /** Equirectangular projection box (2:1); coords rounded to ints in it. */
+  width: number;
+  height: number;
+  /** Douglas–Peucker tolerance in projected units. */
+  tolerance: number;
+  /** Drop islands whose bounding-box span is below this (projected units). */
+  minSpan: number;
+}
+
+const LEVELS: Level[] = [
+  { file: "coastlines.json", width: 1000, height: 500, tolerance: 1.2, minSpan: 4 },
+  { file: "coastlines-hd.json", width: 4000, height: 2000, tolerance: 1.0, minSpan: 3 },
+];
 
 const { epochsMa } = JSON.parse(
   readFileSync(join(DATA, "validation", "places.json"), "utf8"),
 ) as { epochsMa: number[] };
 
 type Pt = [number, number];
-
-function project(lon: number, lat: number): Pt {
-  return [((lon + 180) / 360) * W, ((90 - lat) / 180) * H];
-}
 
 // Perpendicular distance from p to segment a–b.
 function segDist(p: Pt, a: Pt, b: Pt): number {
@@ -77,21 +84,6 @@ function douglasPeucker(pts: Pt[], tol: number): Pt[] {
   return [a, b];
 }
 
-/** Split a projected ring wherever it jumps across the antimeridian seam. */
-function splitAtSeam(ring: Pt[]): Pt[][] {
-  const out: Pt[][] = [];
-  let cur: Pt[] = [];
-  for (let i = 0; i < ring.length; i++) {
-    if (i > 0 && Math.abs(ring[i][0] - ring[i - 1][0]) > W / 2) {
-      if (cur.length > 1) out.push(cur);
-      cur = [];
-    }
-    cur.push(ring[i]);
-  }
-  if (cur.length > 1) out.push(cur);
-  return out;
-}
-
 function bboxSpan(pts: Pt[]): number {
   let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
   for (const [x, y] of pts) {
@@ -110,8 +102,27 @@ function cacheFileFor(ma: number): string {
   return join(CACHE, hit);
 }
 
-function buildEpoch(ma: number): number[][] {
-  const raw = JSON.parse(readFileSync(cacheFileFor(ma), "utf8")).body as FeatureCollection;
+function buildEpoch(raw: FeatureCollection, level: Level): number[][] {
+  const { width: W, height: H, tolerance, minSpan } = level;
+  const project = (lon: number, lat: number): Pt => [
+    ((lon + 180) / 360) * W,
+    ((90 - lat) / 180) * H,
+  ];
+  // Split a projected ring wherever it jumps across the antimeridian seam.
+  const splitAtSeam = (ring: Pt[]): Pt[][] => {
+    const out: Pt[][] = [];
+    let cur: Pt[] = [];
+    for (let i = 0; i < ring.length; i++) {
+      if (i > 0 && Math.abs(ring[i][0] - ring[i - 1][0]) > W / 2) {
+        if (cur.length > 1) out.push(cur);
+        cur = [];
+      }
+      cur.push(ring[i]);
+    }
+    if (cur.length > 1) out.push(cur);
+    return out;
+  };
+
   const shapes: number[][] = [];
   for (const feature of raw.features) {
     if (feature.geometry?.type !== "Polygon") continue;
@@ -119,8 +130,8 @@ function buildEpoch(ma: number): number[][] {
     if (!outer || outer.length < 4) continue;
     const projected = outer.map(([lon, lat]) => project(lon, lat));
     for (const seg of splitAtSeam(projected)) {
-      const simplified = douglasPeucker(seg, TOLERANCE);
-      if (simplified.length < 3 || bboxSpan(simplified) < MIN_SPAN) continue;
+      const simplified = douglasPeucker(seg, tolerance);
+      if (simplified.length < 3 || bboxSpan(simplified) < minSpan) continue;
       // Flat [x0,y0,x1,y1,...] of rounded ints for compactness.
       shapes.push(simplified.flatMap(([x, y]) => [Math.round(x), Math.round(y)]));
     }
@@ -130,20 +141,30 @@ function buildEpoch(ma: number): number[][] {
 
 function main() {
   mkdirSync(OUT_DIR, { recursive: true });
-  const epochs: Record<string, number[][]> = {};
-  let totalPts = 0;
+
+  // Parse each heavy cache file once, build every level from it.
+  const rawByMa = new Map<number, FeatureCollection>();
   for (const ma of epochsMa) {
-    const shapes = buildEpoch(ma);
-    epochs[String(ma)] = shapes;
-    const pts = shapes.reduce((s, r) => s + r.length / 2, 0);
-    totalPts += pts;
-    console.log(`  ${String(ma).padStart(3)} Ma → ${shapes.length} shapes, ${pts} points`);
+    rawByMa.set(ma, JSON.parse(readFileSync(cacheFileFor(ma), "utf8")).body as FeatureCollection);
   }
-  const out = { model: MODEL, width: W, height: H, epochsMa, epochs };
-  const file = join(OUT_DIR, "coastlines.json");
-  writeFileSync(file, JSON.stringify(out));
-  const kb = (readFileSync(file).length / 1024).toFixed(0);
-  console.log(`\nWrote ${file} — ${totalPts} points total, ${kb} KB`);
+
+  for (const level of LEVELS) {
+    const epochs: Record<string, number[][]> = {};
+    let totalPts = 0;
+    console.log(`\n${level.file} (${level.width}×${level.height}, tol ${level.tolerance}):`);
+    for (const ma of epochsMa) {
+      const shapes = buildEpoch(rawByMa.get(ma)!, level);
+      epochs[String(ma)] = shapes;
+      const pts = shapes.reduce((s, r) => s + r.length / 2, 0);
+      totalPts += pts;
+      console.log(`  ${String(ma).padStart(3)} Ma → ${shapes.length} shapes, ${pts} points`);
+    }
+    const out = { model: MODEL, width: level.width, height: level.height, epochsMa, epochs };
+    const file = join(OUT_DIR, level.file);
+    writeFileSync(file, JSON.stringify(out));
+    const kb = (readFileSync(file).length / 1024).toFixed(0);
+    console.log(`  → ${totalPts} points total, ${kb} KB`);
+  }
 }
 
 main();

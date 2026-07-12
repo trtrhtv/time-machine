@@ -32,6 +32,11 @@
     "shareTitle": "Share this journey",
     "shareButton": "Share",
     "shareCopied": "Link copied",
-    "scrubberLabel": "Travel through time"
+    "scrubberLabel": "Travel through time",
+    "viewWorld": "Whole world",
+    "viewLocal": "Around this spot",
+    "localHonesty": "Coastlines only — positions carry ±100 km+ uncertainty, so rivers, valleys, and individual mountains at this spot cannot be known from any reliable reconstruction.",
+    "mapLoading": "Loading the ancient world…",
+    "mapUnavailable": "Map data unavailable"
   }
 }
